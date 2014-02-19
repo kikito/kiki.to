@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+    <title><%= current_page.data.title || "kikito.github.io" %></title>
+    <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
+    <%= stylesheet_link_tag "style" %>
+  </head>
+
+  <body class="<%= page_classes %>">
+    <div class="main">
+      <%= yield %>
+    </div>
+  </body>
+</html>

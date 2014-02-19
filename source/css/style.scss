@@ -1,0 +1,62 @@
+$typecsset-base-font-size:      18px;
+$typecsset-base-line-height:    26px;
+$typecsset-show-baseline:       false;
+
+@import "normalize";
+@import "typecsset";
+@import "pygments";
+
+@import url(http://fonts.googleapis.com/css?family=Lustria);
+@import url(http://fonts.googleapis.com/css?family=Lato);
+@import url(http://fonts.googleapis.com/css?family=Inconsolata);
+
+$light_background_color: #f6f6f6;
+$detail_color: #dedede;
+$text_color: #555;
+$link_color: #469ab5;
+
+body {
+  font-family: 'Lato', Helvetica, sans-serif;
+  padding: $typecsset-magic-number;
+  color: $text_color;
+}
+
+.main {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50em;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Lustria', Georgia, serif;
+}
+
+h1 time, h2 time {
+  font-size: 40%;
+  display: block;
+}
+
+pre, code {
+  font-family: 'Inconsolata', monospace;
+}
+
+pre.highlight {
+  border: 1px solid $detail_color;
+  background-color: $light_background_color;
+  page-break-inside: avoid;
+  padding: $typecsset-magic-number;
+}
+
+a {
+  text-decoration: none;
+  color: $link_color;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+footer{
+  text-align: center;
+}
+
+
