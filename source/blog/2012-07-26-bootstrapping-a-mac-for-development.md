@@ -149,7 +149,7 @@ Then I had to tell iterm2 to use zsh by default. That is done via this
 command:
 
 ```bash
-chsh ~~s /bin/zsh\
+chsh --s /bin/zsh
 ```
 
 Next time a console is opened, it will use zsh instead of bash.
