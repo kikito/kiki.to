@@ -1,7 +1,10 @@
+<h1 class="hero"><a href="/">Enrique García Cota</a></h1>
 
 <h2>Articles</h2>
+<nav>
 <ul>
 <% page_articles.each_with_index do |article, i| %>
   <li><%= link_to article.title, article %> <small>(<time><%= article.date.strftime('%Y-%m-%d') %></time>)</small></li>
 <% end %>
 </ul>
+</nav>
