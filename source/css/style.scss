@@ -14,6 +14,7 @@ $light_background_color: #f6f6f6;
 $detail_color: #dedede;
 $text_color: #555;
 $link_color: #469ab5;
+$link_hover_color: darken( $link_color, 10% );
 
 body {
   font-family: 'Lato', Helvetica, sans-serif;
@@ -32,8 +33,12 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 h1 time, h2 time {
-  font-size: 40%;
+  font-size: 35%;
   display: block;
+}
+
+h1.hero {
+  @include typecsset-font-size(66px);
 }
 
 pre, code {
@@ -51,12 +56,21 @@ a {
   text-decoration: none;
   color: $link_color;
   &:hover {
-    text-decoration: underline;
+    color: $link_hover_color;
   }
 }
 
 footer{
   text-align: center;
+}
+
+.horizontal-list {
+  list-style-type: none;
+
+  li {
+    display: inline-block;
+    @include typecsset-space(margin-right);
+  }
 }
 
 
