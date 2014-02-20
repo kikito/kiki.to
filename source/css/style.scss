@@ -16,9 +16,16 @@ $text_color: #555;
 $link_color: #469ab5;
 $link_hover_color: darken( $link_color, 10% );
 
+$footer_height: 2 * $typecsset-base-line-height;
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   font-family: 'Lato', Helvetica, sans-serif;
-  padding: $typecsset-magic-number;
+  padding: $typecsset-magic-number $typecsset-magic-number $typecsset-magic-number + $footer_height $typecsset-magic-number;
   color: $text_color;
 }
 
@@ -62,6 +69,11 @@ a {
 
 footer{
   text-align: center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: $footer_height;
 }
 
 .horizontal-list {
