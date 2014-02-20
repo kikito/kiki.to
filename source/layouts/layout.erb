@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
-    <title><%= current_page.data.title || "kikito.github.io" %></title>
+    <title><%= current_article.present? ? current_article.title : "kikito.github.io" %></title>
     <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
     <%= stylesheet_link_tag "style" %>
   </head>
@@ -12,5 +12,11 @@
     <div class="main">
       <%= yield %>
     </div>
+    <footer>
+      <ul class="horizontal-list">
+        <li><%= link_to 'kikito', 'https://github.com/kikito', class: 'github' %></li>
+        <li><%= link_to '@otikik', 'https://twitter.com/otikik', class: 'twitter' %></li>
+      </ul>
+    </footer>
   </body>
 </html>
