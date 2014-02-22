@@ -6,9 +6,7 @@ $typecsset-show-baseline:       false;
 @import "typecsset";
 @import "pygments";
 
-@import url(http://fonts.googleapis.com/css?family=Lustria);
-@import url(http://fonts.googleapis.com/css?family=Lato);
-@import url(http://fonts.googleapis.com/css?family=Inconsolata);
+@import url(http://fonts.googleapis.com/css?family=Cabin|Merriweather|Inconsolata);
 
 $light_background_color: #f6f6f6;
 $detail_color: #dedede;
@@ -24,7 +22,7 @@ html {
 }
 
 body {
-  font-family: 'Lato', Helvetica, sans-serif;
+  font-family: 'Droid Sans', Helvetica, sans-serif;
   padding: $typecsset-magic-number $typecsset-magic-number $typecsset-magic-number + $footer_height $typecsset-magic-number;
   color: $text_color;
 }
@@ -36,7 +34,8 @@ body {
 }
 
 h1,h2,h3,h4,h5,h6 {
-  font-family: 'Lustria', Georgia, serif;
+  font-family: 'Merriweather', Georgia, serif;
+  font-weight: normal;
 }
 
 h1 time, h2 time {
@@ -50,11 +49,17 @@ h1.hero {
 
 pre, code {
   font-family: 'Inconsolata', monospace;
+  background-color: $light_background_color;
+  border: 1px solid $detail_color;
+}
+
+code {
+  border-radius: 3px;
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
 pre.highlight {
-  border: 1px solid $detail_color;
-  background-color: $light_background_color;
   page-break-inside: avoid;
   padding: $typecsset-magic-number;
 }
