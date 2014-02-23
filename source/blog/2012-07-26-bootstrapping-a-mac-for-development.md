@@ -21,7 +21,7 @@ Once I clicked on it, it appeared on the Dock. I "left-clicked" (clicked
 with two fingers) on it to display a contextual menu. I choose
 `Options > Keep in Dock` so I didn’t have to look for it again.
 
-### Upgraded the Operative System
+### Upgrade the Operative System
 
 A new version of OSX (codename "Mountain Lion") had been released the
 day before my laptop arrived. Knowing that updates do sometimes provoke
@@ -37,7 +37,7 @@ weighted 4GB.
 After the download finished, the computer requested a reboot. I noticed
 a couple issues:
 
--   Mointain Lion comes with a new security "feature" that blocks
+-   Mountain Lion comes with a new security "feature" that blocks
     installing software that doesn’t come from the App Store - If OSX
     complains that "the developer is using an unkonwn signature" or
     something similar, activate the corresponding option in
