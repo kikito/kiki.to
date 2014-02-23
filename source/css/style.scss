@@ -90,4 +90,34 @@ footer{
   }
 }
 
+.twitter {
+  padding-left: 17px;
+  background: {
+    image: url('/img/twitter.svg');
+    repeat: no-repeat;
+    size: 18px 18px;
+    position: 0 2px;
+  }
+}
+
+.github {
+  padding-left: 20px;
+  background: {
+    image: url('/img/github.svg');
+    repeat: no-repeat;
+    size: 18px 18px;
+    position: 0 1px;
+  }
+}
+
+.stackoverflow {
+  padding-left: 19px;
+  background: {
+    image: url('/img/stackoverflow.svg');
+    repeat: no-repeat;
+    size: 17px 17px;
+    position: 0 1px;
+  }
+}
+
 
