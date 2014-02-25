@@ -6,7 +6,7 @@ $typecsset-show-baseline:       false;
 @import "typecsset";
 @import "pygments";
 
-@import url(http://fonts.googleapis.com/css?family=Cabin|Merriweather|Inconsolata);
+@import url(http://fonts.googleapis.com/css?family=Lustria|Montserrat|Inconsolata);
 
 $light_background_color: #f6f6f6;
 $detail_color: #dedede;
@@ -22,7 +22,7 @@ html {
 }
 
 body {
-  font-family: 'Droid Sans', Helvetica, sans-serif;
+  font-family: 'Lustria', Helvetica, sans-serif;
   padding: $typecsset-magic-number $typecsset-magic-number $typecsset-magic-number + $footer_height $typecsset-magic-number;
   color: $text_color;
 }
@@ -34,7 +34,7 @@ body {
 }
 
 h1,h2,h3,h4,h5,h6 {
-  font-family: 'Merriweather', Georgia, serif;
+  font-family: 'Montserrat', Georgia, serif;
   font-weight: normal;
 }
 
