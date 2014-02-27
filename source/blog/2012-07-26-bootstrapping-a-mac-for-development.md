@@ -134,8 +134,8 @@ curl -Lo- https://raw.github.com/kikito/adegan/master/scripts/bootstrap.sh | bas
 ### iterm2 and zsh
 
 The default terminal emulator is quite alright, but since I was
-experimenting, I decided to install it’s"cool replacement",
-called"iterm2":http://www.iterm2.com . Again, this was a matter of
+experimenting, I decided to install it’s "cool replacement",
+called [iterm2](http://www.iterm2.com). Again, this was a matter of
 downloading and double clicking, and then dragging to the Applications
 folder. Oh, and sticking it into the Dock.
 
@@ -161,7 +161,7 @@ curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | 
 ```
 
 It seems that the version I installed by default sets the theme
-to"random". I edited the `~/.zshrc` file and set it to"robbyrussell",
+to `"random"`. I edited the `~/.zshrc` file and set it to `"robbyrussell"`,
 which I’m used to.
 
 ## Overall experience
@@ -171,7 +171,7 @@ intermediate. It is not as bad as Windows, where each piece of software
 is installed and updated independently, but it is also not as pleasant
 as Ubuntu, where almost everything is centralized via apt.
 
-I found that some applications required"double clicking" to be
+I found that some applications required "double clicking" to be
 installed, others had to be "extracted and copied to the Applications
 folder", while others had an "special window" where you could drag the
 application icon to applications. And then there is the App Store, and
