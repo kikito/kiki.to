@@ -2,7 +2,7 @@
 @import "typecsset";
 @import "pygments";
 
-@import url(http://fonts.googleapis.com/css?family=Lora|Montserrat|Inconsolata);
+@import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic|Montserrat|Inconsolata);
 
 $primary-color:    #307EA9; // links, etc
 $secondary-color:  #555;    // text
@@ -158,6 +158,16 @@ hr {
 article{
   p, ul, ol {
     text-align: justify;
+  }
+}
+
+blockquote {
+  @include typecsset-font-size($typecsset-h4-size);
+  font-style: italic;
+  p {
+    &:before, &:last-of-type:after {
+      @include typecsset-font-size($typecsset-h2-size);
+    }
   }
 }
 
