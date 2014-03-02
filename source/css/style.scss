@@ -2,13 +2,13 @@
 @import "typecsset";
 @import "pygments";
 
-@import url(http://fonts.googleapis.com/css?family=Lustria|Montserrat|Inconsolata);
+@import url(http://fonts.googleapis.com/css?family=Lora|Montserrat|Inconsolata);
 
 $primary-color:    #307EA9; // links, etc
 $secondary-color:  #555;    // text
 $tertiary-color:   #bbb;    // damped text
 $detail-color:     #dedede; // borders, etc
-$background-color: #f6f6f6;    // background in code sections
+$background-color: #fafafa;    // background in code sections
 $alt-background-color: #eee; // background in code sections
 $transparent-color: rgba(0,0,0,0);
 
@@ -22,7 +22,7 @@ html {
 }
 
 body {
-  font-family: 'Lustria', Helvetica, sans-serif;
+  font-family: 'Lora', Helvetica, sans-serif;
   padding: $typecsset-magic-number $typecsset-magic-number $typecsset-magic-number + $footer_height $typecsset-magic-number;
   color: $secondary-color;
 }
@@ -152,6 +152,12 @@ hr {
     repeat: no-repeat;
     size: 17px 17px;
     position: 0 1px;
+  }
+}
+
+article{
+  p, ul, ol {
+    text-align: justify;
   }
 }
 
