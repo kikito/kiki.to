@@ -8,6 +8,7 @@ $primary-color:    #2a5db0; // links, etc
 $secondary-color:  #555;    // text, etc
 $background-color: #f6f6f6; // background in code sections
 $detail-color:     #dedede; // borders, etc
+$transparent-color: rgba(0,0,0,0);
 
 
 $footer_height: 2 * $typecsset-base-line-height;
@@ -105,7 +106,7 @@ footer{
   height: $typecsset-base-line-height;
   padding: 5px;
   &:hover {
-    background-image: radial-gradient(closest-side at center center, rgba(99, 106, 207, 0.011) 50%, rgb(126, 169, 255) 80%, rgba(255, 255, 255, 0) 100%);
+    background-image: radial-gradient(closest-side at center center, $transparent-color 50%, lighten($primary-color, 25%) 80%, $transparent-color 100%);
   }
   img {
     vertical-align: text-top;
