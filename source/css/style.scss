@@ -4,10 +4,11 @@
 
 @import url(http://fonts.googleapis.com/css?family=Lustria|Montserrat|Inconsolata);
 
-$light_background_color: #f6f6f6;
-$detail_color: #dedede;
-$text_color: #555;
-$link_color: #2a5db0;
+$primary-color:    #2a5db0; // links, etc
+$secondary-color:  #555;    // text, etc
+$background-color: #f6f6f6; // background in code sections
+$detail-color:     #dedede; // borders, etc
+
 
 $footer_height: 2 * $typecsset-base-line-height;
 
@@ -19,7 +20,7 @@ html {
 body {
   font-family: 'Lustria', Helvetica, sans-serif;
   padding: $typecsset-magic-number $typecsset-magic-number $typecsset-magic-number + $footer_height $typecsset-magic-number;
-  color: $text_color;
+  color: $secondary-color;
 }
 
 .main {
@@ -48,12 +49,15 @@ article header {
 
 h1.hero {
   @include typecsset-font-size(66px);
+  a:hover {
+    text-decoration: none;
+  }
 }
 
 pre, code {
   font-family: 'Inconsolata', monospace;
-  background-color: $light_background_color;
-  box-shadow: inset 0 0 0 1px $detail_color;
+  background-color: $background-color;
+  box-shadow: inset 0 0 0 1px $detail-color;
 }
 
 code {
@@ -69,9 +73,10 @@ pre.highlight {
 
 a {
   text-decoration: none;
-  color: $link_color;
+  color: $primary-color;
   &:hover {
-    color: lighten( $link_color, 10% );
+    color: lighten( $primary-color, 10% );
+    text-decoration: underline;
   }
 }
 
