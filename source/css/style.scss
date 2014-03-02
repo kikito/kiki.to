@@ -8,7 +8,6 @@ $light_background_color: #f6f6f6;
 $detail_color: #dedede;
 $text_color: #555;
 $link_color: #2a5db0;
-$link_hover_color: #2200cc;
 
 $footer_height: 2 * $typecsset-base-line-height;
 
@@ -35,9 +34,16 @@ h1,h2,h3,h4,h5,h6 {
   font-weight: normal;
 }
 
-h1 time, h2 time {
-  font-size: 35%;
-  display: block;
+article header {
+  position: relative;
+  h1 {
+    margin-right: 8rem;
+  }
+  .time {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
 }
 
 h1.hero {
@@ -65,7 +71,7 @@ a {
   text-decoration: none;
   color: $link_color;
   &:hover {
-    color: $link_hover_color;
+    color: lighten( $link_color, 10% );
   }
 }
 
