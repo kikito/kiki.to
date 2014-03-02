@@ -48,8 +48,8 @@ a couple issues:
     to your .profile/.bashrc/.zshrc:
 
 ```bash
-export LANG=en\_US.UTF-8\
-export LC\_ALL=en\_US.UTF-8\
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 ```
 
 ### Install gcc for OSX
