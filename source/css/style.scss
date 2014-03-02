@@ -83,12 +83,25 @@ footer{
 
   li {
     display: inline-block;
-    @include typecsset-space(margin-right);
+    margin-right: $typecsset-base-font-size;
+    margin-right: 1rem;
   }
 }
 
-.twitter {
-  padding-left: 17px;
+.icon-link{
+  display: inline-block;
+  width: $typecsset-base-line-height;
+  height: $typecsset-base-line-height;
+  padding: 5px;
+  &:hover {
+    background-image: radial-gradient(closest-side at center center, rgba(99, 106, 207, 0.011) 50%, rgb(126, 169, 255) 80%, rgba(255, 255, 255, 0) 100%);
+  }
+  img {
+    vertical-align: text-top;
+  }
+}
+
+.twitter:before{
   background: {
     image: url('/img/twitter.svg');
     repeat: no-repeat;
