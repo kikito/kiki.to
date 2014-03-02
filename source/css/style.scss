@@ -4,8 +4,9 @@
 
 @import url(http://fonts.googleapis.com/css?family=Lustria|Montserrat|Inconsolata);
 
-$primary-color:    #2a5db0; // links, etc
-$secondary-color:  #555;    // text, etc
+$primary-color:    #307EA9; // links, etc
+$secondary-color:  #555;    // text
+$tertiary-color:   #bbb;    // damped text
 $background-color: #f6f6f6; // background in code sections
 $detail-color:     #dedede; // borders, etc
 $transparent-color: rgba(0,0,0,0);
@@ -36,12 +37,17 @@ h1,h2,h3,h4,h5,h6 {
   font-weight: normal;
 }
 
-article header {
+time {
+  font-size: 1rem;
+  color: $tertiary-color;
+}
+
+.detailed-item {
   position: relative;
-  h1 {
+  .item {
     margin-right: 8rem;
   }
-  .time {
+  .detail {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -50,9 +56,6 @@ article header {
 
 h1.hero {
   @include typecsset-font-size(66px);
-  a:hover {
-    text-decoration: none;
-  }
 }
 
 pre, code {
@@ -77,7 +80,6 @@ a {
   color: $primary-color;
   &:hover {
     color: lighten( $primary-color, 10% );
-    text-decoration: underline;
   }
 }
 
@@ -90,6 +92,14 @@ footer{
   height: $footer_height;
 }
 
+hr {
+  @include typecsset-font-size($typecsset-h1-size);
+
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(left, $transparent-color, $secondary-color, $transparent-color);
+}
+
 .horizontal-list {
   list-style-type: none;
 
@@ -98,6 +108,11 @@ footer{
     margin-right: $typecsset-base-font-size;
     margin-right: 1rem;
   }
+}
+
+.unstyled-list {
+  list-style-type: none;
+  margin: 0;
 }
 
 .icon-link{

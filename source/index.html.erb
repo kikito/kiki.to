@@ -1,10 +1,16 @@
+<header>
 <h1 class="hero"><a href="/">Enrique García Cota</a></h1>
+</header>
 
-<h2>Articles</h2>
-<nav>
-<ul>
+<hr />
+
+<ul class='unstyled-list'>
 <% page_articles.each_with_index do |article, i| %>
-  <li><%= link_to article.title, article %> <small>(<time><%= article.date.strftime('%Y-%m-%d') %></time>)</small></li>
+  <li>
+    <h3 class='detailed-item'>
+      <%= link_to article.title, article, class: 'item' %>
+      <time class='detail' datetime="<%= article.date.utc %>"><%= article.date.strftime('%B %d, %Y') %></time>
+    </h3>
+  </li>
 <% end %>
 </ul>
-</nav>

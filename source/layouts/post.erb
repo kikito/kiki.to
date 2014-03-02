@@ -2,10 +2,10 @@
 
   <article>
     <header>
-      <h1><%= current_article.title %></h1>
-    <a href="<%= current_article %>" class='time'>
-      <time datetime="<%= current_article.date.utc %>"><%= current_article.date.strftime('%Y-%m-%d') %></time>
-    </a>
+      <h1 class='detailed-item'>
+        <%= link_to current_article.title, current_article, class: 'item' %>
+        <time class='detail' datetime="<%= current_article.date.utc %>"><%= current_article.date.strftime('%B %d, %Y') %></time>
+      </h1>
     </header>
     <%= yield %>
   </article>
