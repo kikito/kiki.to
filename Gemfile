@@ -7,6 +7,7 @@ gem "middleman-blog", "~> 3.5.1"
 gem "middleman-livereload"
 gem "middleman-syntax"
 gem "middleman-autoprefixer"
+gem "middleman-deploy"
 gem "redcarpet"
 gem "nokogiri"
 

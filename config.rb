@@ -20,6 +20,11 @@ activate :blog do |blog|
   blog.default_extension = ".md"
 end
 
+activate :deploy do |deploy|
+  deploy.method = :git
+  deploy.build_before = true # default: false
+end
+
 page "/feed.xml", layout: false
 
 ###
