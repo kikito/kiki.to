@@ -3,6 +3,7 @@
 ###
 
 activate :syntax
+activate :autoprefixer, browsers: ['last 2 versions', 'Explorer >= 9']
 
 set :markdown_engine, :redcarpet
 set :markdown, :fenced_code_blocks => true, :smartypants => true, :with_toc_data => true
