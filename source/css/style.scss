@@ -8,7 +8,7 @@
 
 $primary-color:    #307EA9; // links, etc
 $secondary-color:  #555;    // text
-$tertiary-color:   #bbb;    // damped text
+$tertiary-color:   #aaa;    // damped text
 $detail-color:     #dedede; // borders, etc
 $background-color: #fafafa;    // background in code sections
 $alt-background-color: #eee; // background in code sections
@@ -129,11 +129,24 @@ a.social {
 }
 
 blockquote {
-  @include typecsset-font-size($typecsset-h4-size);
+  @include typecsset-font-size($typecsset-h3-size);
   font-style: italic;
   p {
     &:before, &:last-of-type:after {
+      font-family: custom-symbols;
+      font-style: normal;
+      color: $tertiary-color;
+      @extend %typecsset-vertical-rhythm;
+    }
+    &:before {
       @include typecsset-font-size($typecsset-h2-size);
+      content: '\e804';
+      padding-right: 0.2em;
+    }
+    &:last-of-type:after {
+      @include typecsset-font-size($typecsset-h4-size);
+      content: '\e805';
+      padding-left: 0.4em;
     }
   }
 }
