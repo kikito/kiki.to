@@ -7,8 +7,7 @@ today.
 
 -MORE-
 
-Why is it forbidden for a function to do two different things?
---------------------------------------------------------------
+> Why is it forbidden for a function to do two different things?
 
 There are many reasons. The first one is that functions are supposed to
 be reusable. If you divide a big function into smaller functions, you
@@ -22,8 +21,7 @@ A big function is like a landscape that one has to explore in order to
 those names act as "signposts" indicating where the code "goes" to
 humans.
 
-What would you use instead?
----------------------------
+> What would you use instead?
 
 If a function does two things, you divide it in two functions, give
 those functions proper, significant, pronounceable names, and call those

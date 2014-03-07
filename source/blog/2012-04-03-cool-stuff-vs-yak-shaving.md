@@ -2,13 +2,15 @@
 title: "Cool Stuff vs Yak Shaving"
 ---
 
-> This is a copy of [a
-> post](https://love2d.org/forums/viewtopic.php?f=4&t=8608&p=53181#p53181)
-> I did recently in the LÖVE forums.
+This is a copy of [a post](https://love2d.org/forums/viewtopic.php?f=4&t=8608&p=53181#p53181) I did recently in the LÖVE forums.
 
-This is not the first time I hear about the "I don't like using
-libraries" thing, and I have been thinking about it for a while. I guess
-this is a good place to expose my views on the matter.
+-MORE-
+
+> I don't like using libraries
+
+This is not the first time I hear that phrase, and I have been thinking
+about it for a while. I guess this is a good place to expose my views on
+the matter.
 
 You see, for me there are two kinds of tasks in programming: there is
 **Cool Stuff** and there is **Yak Shaving**.
@@ -44,10 +46,9 @@ still doing the important stuff - which is walking that long, long path.
 It's only that now you don't have to worry about all the little pointy
 pebbles in the way.
 
-I also want to address the *"but if I use libraries, I will not
-learn!"* concern.
+> But if I use libraries, I will not learn!
 
-First of all, I think learning is great. I'm all for learning. And I think that it is a proven fact that learning from others is more effective than having to learn it by yourself. A good teacher will explain the Theory of relativity in one hour. A class full of students, however bright they are, will forcefully take much longer than that to come up with the theory all by themselves.
+I think learning is great. I'm all for learning. And I think that it is a proven fact that learning from others is more effective than having to learn it by yourself. A good teacher will explain the Theory of relativity in one hour. A class full of students, however bright they are, will forcefully take much longer than that to come up with the theory all by themselves.
 
 If you want to learn, that is great) Just don't try to go "macho" and do
 it on your own. Open up an existing lib, and see how other people have

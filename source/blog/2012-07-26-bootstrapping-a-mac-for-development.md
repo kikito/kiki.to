@@ -13,7 +13,7 @@ system (I used to use Ubuntu on a custom-made PC).
 I’ve spent a couple days installing and configuring it for development
 usage (mostly Ruby on Rails). Here’s what I’ve done so far:
 
-### Locate the terminal
+## Locate the terminal
 
 I was able to find the terminal using the "find tool" (a little
 magnifier glass near the top right of the screen) and typing "terminal".
@@ -21,7 +21,7 @@ Once I clicked on it, it appeared on the Dock. I "left-clicked" (clicked
 with two fingers) on it to display a contextual menu. I choose
 `Options > Keep in Dock` so I didn’t have to look for it again.
 
-### Upgrade the Operative System
+## Upgrade the Operative System
 
 A new version of OSX (codename "Mountain Lion") had been released the
 day before my laptop arrived. Knowing that updates do sometimes provoke
@@ -52,7 +52,7 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 ```
 
-### Install gcc for OSX
+## Install gcc for OSX
 
 Macs come with no compiler installed by default. From what I could
 understand, the development environment is called "XCode". It’s a big
@@ -64,7 +64,7 @@ However, I opted for an alternative approach: I used
 [gcc-for-osx](https://github.com/kennethreitz/osx-gcc-installer/) .
 Installing it is very straightforward; download, double-click business.
 
-### Install ruby
+## Install ruby
 
 Once the compiler is in place, you can install ruby. The recommended way
 to do that is via a ruby version manager. There are two main ones: `rvm`
@@ -94,7 +94,7 @@ done in [octopress](http://octopress.org) , and it does not work in ruby
 rvm install 1.9.2
 ```
 
-### Install homebrew
+## Install homebrew
 
 Homebrew is a tool for installing packages from the command line. I
 think of it as an "very limited apt-tools package". But it’s the best
@@ -112,7 +112,7 @@ brew install git
 brew install wget
 ```
 
-### Vim
+## Vim
 
 Another thing I needed was a better console, and a decent source code
 editor. I am used to Vim in Ubuntu, so the natural choice in OSX is
@@ -131,7 +131,7 @@ same command I use in Ubuntu:
 curl -Lo- https://raw.github.com/kikito/adegan/master/scripts/bootstrap.sh | bash
 ```
 
-### iterm2 and zsh
+## iterm2 and zsh
 
 The default terminal emulator is quite alright, but since I was
 experimenting, I decided to install it’s "cool replacement",
