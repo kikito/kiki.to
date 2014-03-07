@@ -6,16 +6,16 @@
 
 @import url(https://fonts.googleapis.com/css?family=Lora:400,700,400italic|Inconsolata);
 
-$primary-color:    #307EA9; // links, etc
-$secondary-color:  #555;    // text
-$tertiary-color:   #aaa;    // damped text
-$detail-color:     #dedede; // borders, etc
-$background-color: #fafafa;    // background in code sections
+$primary-color:    #307EA9;  // links, etc
+$secondary-color:  #555;     // text
+$tertiary-color:   #aaa;     // damped text
+$detail-color:     #dedede;  // borders, etc
+$background-color: #fafafa;  // background in code sections
 $alt-background-color: #eee; // background in code sections
 $transparent-color: rgba(0,0,0,0);
 
 
-$footer_height: 4 * $typecsset-base-line-height;
+$footer-height: 4 * $typecsset-base-line-height;
 
 html {
   position: relative;
@@ -25,19 +25,32 @@ html {
 
 body {
   font-family: 'Lora', Helvetica, sans-serif;
-  padding: $typecsset-magic-number $typecsset-magic-number $typecsset-magic-number + $footer_height $typecsset-magic-number;
+  padding: $typecsset-magic-number $typecsset-magic-number $typecsset-magic-number + $footer-height $typecsset-magic-number;
   color: $secondary-color;
 }
 
-.main {
+header, .main {
   margin-left: auto;
   margin-right: auto;
   max-width: 50em;
+  position: relative;
 }
 
 h1,h2,h3,h4,h5,h6 {
   font-family: 'Clear Sans', Georgia, serif;
-  font-weight: normal;
+  font-weight: 400;
+}
+
+.site-header {
+  .logo {
+    @include typecsset-font-size($typecsset-h2-size);
+    font-weight: 700;
+  }
+  .site-nav {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
 }
 
 time {
@@ -88,7 +101,7 @@ footer{
   left: 0;
   bottom: 0;
   width: 100%;
-  height: $footer_height;
+  height: $footer-height;
 }
 
 hr {
@@ -101,11 +114,12 @@ hr {
 
 .horizontal-list {
   list-style-type: none;
+  margin: 0;
 
   li {
     display: inline-block;
-    margin-right: $typecsset-base-font-size;
-    margin-right: 1rem;
+    margin-left: $typecsset-base-font-size;
+    margin-left: 1rem;
   }
 }
 
@@ -149,6 +163,10 @@ blockquote {
       padding-left: 0.4em;
     }
   }
+}
+
+.pull-right {
+  float: right;
 }
 
 

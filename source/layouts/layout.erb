@@ -9,6 +9,18 @@
   </head>
 
   <body class="<%= page_classes %>">
+
+    <header class='site-header'>
+      <h1 class="logo"><a href="/">kiki.to</a></h1>
+      <nav class='site-nav'>
+        <ul class='horizontal-list'>
+          <li><a href="/about">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <hr />
+
     <section class="main">
       <%= yield %>
     </section>
