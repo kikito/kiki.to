@@ -1,6 +1,7 @@
 @import "normalize";
 @import "typecsset";
 @import "pygments";
+@import "custom-symbols";
 
 @import url(https://fonts.googleapis.com/css?family=Lora:400,700,400italic|Montserrat|Inconsolata);
 
@@ -13,7 +14,7 @@ $alt-background-color: #eee; // background in code sections
 $transparent-color: rgba(0,0,0,0);
 
 
-$footer_height: 2 * $typecsset-base-line-height;
+$footer_height: 4 * $typecsset-base-line-height;
 
 html {
   position: relative;
@@ -113,51 +114,17 @@ hr {
   margin: 0;
 }
 
-.icon-link{
-  display: inline-block;
-  width: $typecsset-base-line-height;
-  height: $typecsset-base-line-height;
-  padding: 5px;
-  &:hover {
-    background-image: radial-gradient(closest-side at center center, $transparent-color 50%, lighten($primary-color, 25%) 80%, $transparent-color 100%);
-  }
-  img {
-    vertical-align: text-top;
-  }
-}
-
-.twitter:before{
-  background: {
-    image: url('/img/twitter.svg');
-    repeat: no-repeat;
-    size: 18px 18px;
-    position: 0 2px;
-  }
-}
-
-.github {
-  padding-left: 20px;
-  background: {
-    image: url('/img/github.svg');
-    repeat: no-repeat;
-    size: 18px 18px;
-    position: 0 1px;
-  }
-}
-
-.stackoverflow {
-  padding-left: 19px;
-  background: {
-    image: url('/img/stackoverflow.svg');
-    repeat: no-repeat;
-    size: 17px 17px;
-    position: 0 1px;
-  }
-}
-
 article{
   p, ul, ol {
     text-align: justify;
+  }
+}
+
+a.social {
+  font-size: 150%;
+  color: $secondary-color;
+  &:hover {
+    color: lighten( $primary-color, 10% );
   }
 }
 
