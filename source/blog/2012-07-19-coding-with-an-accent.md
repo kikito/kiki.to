@@ -37,8 +37,8 @@ grammatical rules, I mean; more of the semantic kind.
 
 For example, French people (at least people from Paris, which are the
 ones I’m more familiar with) don’t even say “we”. I mean, they have a
-word for it - “nous”. But they never use it when colloquially speaking.
-Instead, they use the impersonal “on”, which roughtly translates to “it”
+word for it - *nous*. But they never use it when colloquially speaking.
+Instead, they use the impersonal *on*, which roughtly translates to “it”
 (as in “It is said that…”). So, when they mean “let’s go shopping” they
 say something like “it should go shopping”. Crazy, right? Well, they do
 it all the time.
@@ -50,8 +50,8 @@ Atlantic. I wonder if some day “I wanna go” will be considered valid
 English.
 
 In Spain, no one says good-bye any more. There is a word for it, of
-course - “Adiós”. But no one says it. Everyone says “see you soon”
-instead. Even if it’s longer. Society has decided that “Adiós” is too …
+course - *Adiós*. But no one says it. Everyone says “see you soon”
+instead. Even if it’s longer. Society has decided that *Adiós* is too …
 hard, I suppose.
 
 They say eskimos have 7 different words for “snow”. I don’t know if it’s
@@ -132,7 +132,7 @@ mistake.
 
 I’ve needed a lot of time to realize that every programming language has
 its strenghts; and they are often not easily “exportable”. This is what
-I call the “nature” of a language. This “nature” is not necessarily
+I call the *nature* of a language. This *nature* is not necessarily
 related with the language’s grammar rules. For example, Javascript has
 acquired an “asyncronous nature” recently, thanks to
 [node.js](http://nodejs.org) .
@@ -144,4 +144,4 @@ other people’s code.
 
 So, when you learn your next programming language, don’t stop after you
 learn the basic grammar rules. Try to concentrate on whether people say
-“Adiós” with it. Or how many ways it has for saying “snow”.
+*Adiós* with it. Or how many ways it has for saying “snow”.
