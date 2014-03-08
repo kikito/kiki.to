@@ -1,6 +1,10 @@
+---
+title: Legal
+---
+
 # Legal stuff
 
-## Content
+## Content:
 
 <div class='text-centered'>
   <h3>
@@ -17,7 +21,7 @@
 </div>
 
 
-## Source Code
+## Source Code:
 
 I have used the following libraries:
 

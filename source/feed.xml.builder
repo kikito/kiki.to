@@ -1,13 +1,13 @@
 xml.instruct!
 xml.feed "xmlns" => "http://www.w3.org/2005/Atom" do
-  site_url = "https://kikito.github.io"
-  xml.title "Enrique García Cota"
+  site_url = settings.site_url
+  xml.title settings.site_author
   xml.subtitle "Blog"
   xml.id URI.join(site_url, blog.options.prefix.to_s)
   xml.link "href" => URI.join(site_url, blog.options.prefix.to_s)
   xml.link "href" => URI.join(site_url, current_page.path), "rel" => "self"
   xml.updated(blog.articles.first.date.to_time.iso8601) unless blog.articles.empty?
-  xml.author { xml.name "Enrique García Cota" }
+  xml.author { xml.name "<%= site_url %>" }
 
   blog.articles[0..5].each do |article|
     xml.entry do
@@ -16,7 +16,7 @@ xml.feed "xmlns" => "http://www.w3.org/2005/Atom" do
       xml.id URI.join(site_url, article.url)
       xml.published article.date.to_time.iso8601
       xml.updated File.mtime(article.source_file).iso8601
-      xml.author { xml.name "Enrique García Cota" }
+      xml.author { xml.name settings.site_author }
       # xml.summary article.summary, "type" => "html"
       xml.content article.body, "type" => "html"
     end

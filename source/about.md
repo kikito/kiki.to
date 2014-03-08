@@ -1,3 +1,7 @@
+---
+title: About
+---
+
 # Hi, I'm **Enrique García Cota**
 
 By day, I am a web developer.

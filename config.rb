@@ -1,4 +1,13 @@
 ###
+# Site settings
+###
+
+set :site_author, "Enrique García Cota"
+set :site_title, "kiki.to"
+set :site_url, "http://kiki.to"
+
+
+###
 # Blog settings
 ###
 
