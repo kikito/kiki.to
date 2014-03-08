@@ -143,6 +143,7 @@ blockquote {
   @include typecsset-font-size($typecsset-h3-size);
   font-style: italic;
   p {
+    text-align: left;
     &:before, &:last-of-type:after {
       font-family: $font-family-custom;
       font-style: normal;
