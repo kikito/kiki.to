@@ -54,11 +54,11 @@ function Turret:update(dt)
 end
 ```
 
-lots of functions like this, your code tends to become unmanageable,
-especially if you return to it after not touching it for several months.
-It's a code that you understand while you are writing, and certainly the
-machine understands it, but it doesn't have "signposts" for future
-visitors. They have to "explore" it to know it.
+If you use lots of functions like this one, your code tends to become
+unmanageable, especially if you return to it after not touching it for
+several months. It's a code that you understand while you are writing, and
+certainly the machine understands it, but it doesn't have "signposts" for
+future visitors. They have to "explore" it to know it.
 
 One option is to put a couple comments.
 
