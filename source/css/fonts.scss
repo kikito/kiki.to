@@ -1,0 +1,34 @@
+$cache-buster: 123123;
+
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal, $use-cache-buster: false) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+
+    $buster: '';
+    $iefix: '?#iefix';
+
+    @if $use-cache-buster == true {
+      $buster: '?#{$cache-buster}';
+      $iefix: '?#{$cache-buster}#iefix';
+    }
+
+    src: font-url('#{$file-path}.eot#{$buster}');
+    src: font-url('#{$file-path}.eot#{$iefix}')                  format('embedded-opentype'),
+         font-url('#{$file-path}.woff#{$buster}')                format('woff'),
+         font-url('#{$file-path}.ttf#{$buster}')                 format('truetype'),
+         font-url('#{$file-path}.svg#{$buster}##{$font-family}') format('svg');
+  }
+}
+
+@include font-face(Clear Sans,     '/fonts/ClearSans-Light');
+@include font-face(Clear Sans,     '/fonts/ClearSans-Bold', bold);
+@include font-face(Custom Symbols, '/fonts/custom-symbols', normal, normal, true);
+
+@import url(https://fonts.googleapis.com/css?family=Lora:400,700,400italic|Inconsolata);
+
+$font-family-serif: Lora, Georgia, Cambria, "Times New Roman", Times, serif;
+$font-family-sans: "Clear Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+$font-family-mono: Inconsolata, "Bitstream Vera Sans Mono", Consolas, Courier, monospace;
+$font-family-custom: "Custom Symbols", sans-serif;

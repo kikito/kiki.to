@@ -1,10 +1,8 @@
 @import "normalize";
 @import "typecsset";
 @import "pygments";
-@import "custom-symbols";
-@import "clear-sans";
-
-@import url(https://fonts.googleapis.com/css?family=Lora:400,700,400italic|Inconsolata);
+@import "fonts";
+@import "icons";
 
 $primary-color:    #307EA9;  // links, etc
 $secondary-color:  #555;     // text
@@ -24,7 +22,7 @@ html {
 }
 
 body {
-  font-family: 'Lora', Helvetica, sans-serif;
+  font-family: $font-family-serif;
   padding: $typecsset-magic-number $typecsset-magic-number $typecsset-magic-number + $footer-height $typecsset-magic-number;
   color: $secondary-color;
 }
@@ -37,14 +35,14 @@ header, .main {
 }
 
 h1,h2,h3,h4,h5,h6 {
-  font-family: 'Clear Sans', Georgia, serif;
-  font-weight: 400;
+  font-family: $font-family-sans;
+  font-weight: normal;
 }
 
 .site-header {
   .logo {
     @include typecsset-font-size($typecsset-h2-size);
-    font-weight: 700;
+    font-weight: bold;
   }
   .site-nav {
     position: absolute;
@@ -71,7 +69,7 @@ time {
 }
 
 pre, code {
-  font-family: 'Inconsolata', monospace;
+  font-family: $font-family-mono;
   background-color: $alt-background-color;
   box-shadow: inset 0 0 0 1px $detail-color;
 }
@@ -135,7 +133,6 @@ article{
 }
 
 a.social {
-  font-size: 150%;
   color: $secondary-color;
   &:hover {
     color: lighten( $primary-color, 10% );
@@ -147,19 +144,17 @@ blockquote {
   font-style: italic;
   p {
     &:before, &:last-of-type:after {
-      font-family: custom-symbols;
+      font-family: $font-family-custom;
       font-style: normal;
       color: $tertiary-color;
       @extend %typecsset-vertical-rhythm;
     }
     &:before {
       @include typecsset-font-size($typecsset-h2-size);
-      content: '\e804';
       padding-right: 0.2em;
     }
     &:last-of-type:after {
       @include typecsset-font-size($typecsset-h4-size);
-      content: '\e805';
       padding-left: 0.4em;
     }
   }

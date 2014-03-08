@@ -1,0 +1,35 @@
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: $font-family-custom;
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+
+  /* increase size */
+  font-size: 120%;
+}
+
+.icon-stackoverflow:before { content: '\4dc0'; } /* '䷀' */
+.icon-mail:before { content: '\2709'; } /* '✉' */
+.icon-rss:before { content: '\25c9'; } /* '◉' */
+.icon-github:before { content: '\24a2'; } /* '⒢' */
+.icon-twitter:before { content: '\74'; } /* 't' */
+.icon-quote-left:before { content: '\201c'; } /* '“' */
+.icon-quote-right:before { content: '\201d'; } /* '”' */
