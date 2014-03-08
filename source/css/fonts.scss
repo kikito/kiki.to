@@ -26,9 +26,15 @@ $cache-buster: 123123;
 @include font-face(Clear Sans,     '/fonts/ClearSans-Bold', bold);
 @include font-face(Custom Symbols, '/fonts/custom-symbols', normal, normal, true);
 
+@include font-face(Inconsolata Fallback, '/fonts/inconsolata-regular');
+@include font-face(Lora Fallback,        '/fonts/lora-regular');
+@include font-face(Lora Fallback,        '/fonts/lora-bold', bold);
+@include font-face(Lora Fallback,        '/fonts/lora-italic', normal, italic);
+
+// Try to use google fonts first, otherwise use fallbacks
 @import url(https://fonts.googleapis.com/css?family=Lora:400,700,400italic|Inconsolata);
 
-$font-family-serif: Lora, Georgia, Cambria, "Times New Roman", Times, serif;
 $font-family-sans: "Clear Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-$font-family-mono: Inconsolata, "Bitstream Vera Sans Mono", Consolas, Courier, monospace;
+$font-family-serif: Lora, "Lora Fallback", Georgia, Cambria, "Times New Roman", Times, serif;
+$font-family-mono: Inconsolata, "Inconsolata Fallback", "Bitstream Vera Sans Mono", Consolas, Courier, monospace;
 $font-family-custom: "Custom Symbols", sans-serif;
