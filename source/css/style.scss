@@ -10,7 +10,9 @@ $tertiary-color:   #aaa;     // damped text
 $detail-color:     #dedede;  // borders, etc
 $background-color: #fafafa;  // background in code sections
 $alt-background-color: #eee; // background in code sections
+$hover-color: lighten( $primary-color, 10% ); // hover links
 $transparent-color: rgba(0,0,0,0);
+
 
 
 $footer-height: 4 * $typecsset-base-line-height;
@@ -91,7 +93,7 @@ a {
   color: $primary-color;
   transition: color 0.25s ease;
   &:hover {
-    color: lighten( $primary-color, 10% );
+    color: $hover-color;
   }
 }
 
@@ -136,9 +138,10 @@ article{
 
 a.social, a.site-nav-link, .logo a {
   color: $secondary-color;
-  &:hover {
-    color: lighten( $primary-color, 10% );
-  }
+}
+
+a.damped {
+  color: $tertiary-color;
 }
 
 a.site-nav-link {
@@ -146,11 +149,24 @@ a.site-nav-link {
   text-transform: uppercase;
 }
 
+a.social, a.site-nav-link, .logo a, a.damped {
+  &:hover {
+    color: $hover-color;
+  }
+}
+
+
+
 .corner {
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: 1px;
   line-height: 1rem;
+  &.left {
+    left: 1px;
+  }
+  &.right {
+    right: 1px;
+  }
 }
 
 blockquote {
@@ -177,6 +193,10 @@ blockquote {
 
 .pull-right {
   float: right;
+}
+
+.text-centered {
+  text-align: center;
 }
 
 
