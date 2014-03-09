@@ -30,9 +30,10 @@ activate :blog do |blog|
 end
 
 activate :deploy do |deploy|
-  deploy.method = :git
-  deploy.branch = 'master'
   deploy.build_before = true # default: false
+  deploy.method = :rsync
+  deploy.host   = 'kiki.to'
+  deploy.path   = '~/nginx/www'
 end
 
 page "/feed.xml", layout: false
