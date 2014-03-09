@@ -42,7 +42,7 @@ I have used the following libraries:
 * [typecsset](http://csswizardry.com/typecsset/) is copyright of Harry Roberts and distributed under the [Apache License](http://apache.org/licenses/LICENSE-2.0)
 * [normalize.css](http://git.io/normalize) is copyright of Nicolas Gallagher and Jonathan Neal and is distributed under the [MIT License](http://opensource.org/licenses/MIT)
 
-The rest of the source code produced in this blog is available [on my github account](https://github.com/kikito) and is available under the [MIT License](http://opensource.org/licenses/MIT).
+The rest of the source code produced in this blog is available [on its github repo](https://github.com/kikito/kiki.to) and is available under the [MIT License](http://opensource.org/licenses/MIT).
 
 ```
 The MIT License (MIT)
