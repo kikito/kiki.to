@@ -20,6 +20,20 @@ title: Legal
   </h1>
 </div>
 
+The fonts I used are:
+
+* [Clear Sans](http://https://01.org/clear-sans), distributed under the [Apache License](http://apache.org/licenses/LICENSE-2.0). Its copyright is unclear, I will assume Intel.
+* [Lora](http://www.google.com/fonts/specimen/Lora), copyright of [Cyreal](http://www.cyreal.org/), distributed under the [SIL Open Font License 1.1](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+* [Inconsolata](http://www.google.com/fonts/specimen/Lora), copyright of Raph Levien, distributed under the [SIL Open Font License 1.1](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+* *Custom Symbols* is a custom webfont created using [fontello](http://fontello.com/), aggregating some symbols from [FontAwesome](http://fortawesome.github.io/Font-Awesome/) ([SIL](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)),
+  [Entypo](http://www.entypo.com/) ([CC-BY-SA](https://creativecommons.org/licenses/by-sa/2.0/)) and [Iconic](https://useiconic.com/) ([SIL](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)).
+
+Any or all the fonts mentioned above might have been put through [fontsquirrel](http://www.fontsquirrel.com/) to reduce size and remove unused char subsets.
+
+The "Stackoverflow favicon" Icon that appears in *Custom Symbols* was done manually by myself using Inkscape. It's licensed under [CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/). The raw SVG format can be found here:
+
+* [Colored Icon](/img/stackoverflow-favicon.svg)
+* [Merged Monochrome](/img/stackoverflow-favicon-font.svg) (useful for fonts)
 
 ## Source Code:
 
