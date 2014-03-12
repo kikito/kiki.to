@@ -51,22 +51,34 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 time {
-  font-size: 1rem;
+  @include typecsset-font-size($typecsset-base-font-size);
+
   color: $tertiary-color;
   letter-spacing: -0.05rem;
 }
 
 .detailed-item {
   position: relative;
-  .item {
-    margin-right: 8rem;
-  }
   .detail {
-    position: absolute;
-    right: 0;
-    bottom: 0;
+    display: none;
   }
 }
+
+@media only screen and (min-width : 768px) {
+  .detailed-item {
+    .item {
+      margin-right: 8rem;
+    }
+    .detail {
+      position: absolute;
+      display: block;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
+
+
 
 pre, code {
   font-family: $font-family-mono;
@@ -143,6 +155,7 @@ a.damped {
 
 a.site-nav-link {
   font-family: $font-family-sans;
+  @include typecsset-font-size($typecsset-h6-size);
   text-transform: uppercase;
 }
 
