@@ -19,7 +19,7 @@ I tried to find a ppa for golang and, lo and behold! [There is one](https://laun
 
 Since the official instructions don't mention how to use this wonderful resource, allow me:
 
-``` bash Install golang-stagle from the gophers/go ppa
+``` bash
 sudo add-apt-repository ppa:gophers/go
 sudo apt-get update
 sudo apt-get install golang-stable
