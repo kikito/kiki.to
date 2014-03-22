@@ -1,3 +1,5 @@
+require 'htmlentities'
+
 ###
 # Site settings
 ###
@@ -88,4 +90,32 @@ configure :build do
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
+end
+
+helpers do
+  def superstrip(str)
+    coder = HTMLEntities.new
+    coder.decode(strip_tags(str)).gsub(/\n/, " ").strip
+  end
+
+  def page_title
+    buffer = [site_title]
+    if current_article && current_article.title.present?
+      buffer << current_article.title
+    else
+      buffer << current_page.data.title if current_page.data.title.present?
+    end
+    superstrip(buffer.join ' | ')
+  end
+
+  def meta_description
+    description = ''
+    if current_article.present?
+      description = current_article.summary
+    else
+      description = current_page.data.title if current_page.data.title.present?
+    end
+    superstrip(description)
+  end
+
 end

@@ -11,5 +11,7 @@ gem "middleman-deploy"
 gem "redcarpet"
 gem "nokogiri"
 
+gem "htmlentities"
+
 # For feed.xml.builder
 gem "builder", "~> 3.0"
