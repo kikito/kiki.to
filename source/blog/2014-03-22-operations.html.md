@@ -59,7 +59,7 @@ It also worked the opposite way: working in ops has made me more conscious about
 ## Conclusions
 
 * Don't get me wrong: I still hate ops. I just don't hate it *all the time*.
-* I'm pretty sure that will never be an operations person. But I can handle myself in certain situations.
+* I'm pretty sure that will never be an operations person. But I can defend myself in certain situations.
 * I have respect Ops (the tasks and the guys) more than I do when I started. So that's good.
 * Sometimes, you will be happier not knowing what you are really thinking.
 
