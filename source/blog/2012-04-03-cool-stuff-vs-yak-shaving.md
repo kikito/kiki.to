@@ -4,7 +4,7 @@ title: "Cool Stuff vs Yak Shaving"
 
 This is a copy of [a post](https://love2d.org/forums/viewtopic.php?f=4&t=8608&p=53181#p53181) I did recently in the LÖVE forums.
 
--MORE-
+<!-- MORE -->
 
 > I don't like using libraries
 

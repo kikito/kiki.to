@@ -25,7 +25,7 @@ activate :blog do |blog|
 
   blog.permalink = "{year}/{month}/{day}/{title}.html"
   blog.layout = "post"
-  blog.summary_separator = /(-MORE-)/
+  blog.summary_separator = /(<!-- MORE -->)/
   blog.default_extension = ".md"
 end
 

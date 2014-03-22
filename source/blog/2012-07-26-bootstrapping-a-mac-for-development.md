@@ -5,7 +5,7 @@ title: "Bootstrapping a mac for development"
 I recently acquired a new development machine - A Mac Book Air. I had
 been resisting it for quite some time now.
 
--MORE-
+<!-- MORE -->
 
 It is a very fine machine, but I’m not familiar with its operative
 system (I used to use Ubuntu on a custom-made PC).

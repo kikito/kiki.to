@@ -4,7 +4,7 @@ title: "Installing Go in Ubuntu using the PPA"
 
 I've recently started getting interested in [Go](http://golang.org) (also known as *golang*), one of the new programming languages being developed by Google (another one is [DART](http://www.dartlang.org/) , but I'm not interested in that one. Yet).
 
--MORE-
+<!-- MORE -->
 
 One of the first hurdles I have encontered is that the [installation instructions](http://golang.org/doc/install#freebsd_linux) seem incomplete, at least for Ubuntu.
 They tell you to go and download the source code and compile it on your machine. While I'm not afraid of compiling stuff myself, I'm not so fond of maintaining the compiled programs up-to-date manually. It reminds me of windows, brr.

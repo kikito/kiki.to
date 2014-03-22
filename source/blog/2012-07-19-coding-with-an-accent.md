@@ -5,7 +5,7 @@ title: "Coding with an Accent"
 Here is one little tip you might not know: programming languages, like
 spoken languages, have accents.
 
--MORE-
+<!-- MORE -->
 
 Well, maybe I’m stretching the metaphor a bit. But only a bit. So bear
 with me while I dissert a bit about spoken languages. I promise it won’t

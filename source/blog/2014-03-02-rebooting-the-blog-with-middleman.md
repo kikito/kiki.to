@@ -6,6 +6,8 @@ Some time ago, I [created this space](/blog/2012/03/06/starting-the-blog-with-oc
 
 The experience was not pleasant:
 
+<!-- MORE -->
+
 * Octopress has a very "kitchen-sink" mindset. In a way, it provides too many tools by default.
 * The work folder is too cluttered with auxiliary files and folders.
 * Publishing a new post was an ordeal - partly because octopress' layout was so alien.

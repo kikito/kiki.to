@@ -5,7 +5,7 @@ This is a copy of [a post](https://love2d.org/forums/viewtopic.php?t=2826&p=3394
 did some time ago in the LÖVE, which someone kindly reminded me of
 today.
 
--MORE-
+<!-- MORE -->
 
 > Why is it forbidden for a function to do two different things?
 
