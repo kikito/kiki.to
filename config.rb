@@ -38,8 +38,6 @@ activate :deploy do |deploy|
   deploy.path   = '~/nginx/www'
 end
 
-page "/feed.xml", layout: false
-
 ###
 # Compass
 ###
@@ -117,5 +115,4 @@ helpers do
     end
     superstrip(description)
   end
-
 end
