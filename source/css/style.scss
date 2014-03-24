@@ -14,6 +14,13 @@ $transparent-color: rgba(0,0,0,0);
 
 $footer-height: 4 * $typecsset-base-line-height;
 
+// This basically means "not mobile"
+@mixin medium-or-big-screen {
+  @media screen and (min-width: 500px) {
+    @content
+  }
+}
+
 html {
   position: relative;
   min-height: 100%;
@@ -64,7 +71,7 @@ time {
   }
 }
 
-@media only screen and (min-width : 768px) {
+@include medium-or-big-screen {
   .detailed-item {
     .item {
       margin-right: 8rem;
@@ -176,6 +183,16 @@ a.social, a.site-nav-link, .logo a, a.damped {
   }
   &.right {
     right: 1px;
+  }
+}
+
+// Deactivate left margins on mobile
+blockquote, ul, ol, dd {
+  @include typecsset-space(margin-left, 1);
+}
+@include medium-or-big-screen {
+  blockquote, ul, ol, dd {
+    @include typecsset-space(margin-left);
   }
 }
 
