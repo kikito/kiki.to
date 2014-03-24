@@ -2,7 +2,7 @@
 title: Small Functions are Good for the Universe
 ---
 This is a copy of [a post](https://love2d.org/forums/viewtopic.php?t=2826&p=33948#p33950) I
-did some time ago in the LÖVE, which someone kindly reminded me of
+did some time ago in the LÖVE forums, which someone kindly reminded me of
 today.
 
 <!-- MORE -->
