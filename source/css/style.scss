@@ -22,7 +22,7 @@ html {
 
 body {
   font-family: $font-family-serif;
-  padding: $typecsset-magic-number $typecsset-magic-number $typecsset-magic-number + $footer-height $typecsset-magic-number;
+  padding: $typecsset-magic-number 5px $typecsset-magic-number + $footer-height 5px;
   color: $secondary-color;
 }
 
