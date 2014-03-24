@@ -50,7 +50,7 @@ pebbles in the way.
 
 I think learning is great. I'm all for learning. And I think that it is a proven fact that learning from others is more effective than having to learn it by yourself. A good teacher will explain the Theory of relativity in one hour. A class full of students, however bright they are, will forcefully take much longer than that to come up with the theory all by themselves.
 
-If you want to learn, that is great) Just don't try to go "macho" and do
+If you want to learn, that is wonderful - Just don't try to go "macho" and do
 it on your own. Open up an existing lib, and see how other people have
 already done it! Don't try to invent relativity, read a book about it!
 Be efficient!
