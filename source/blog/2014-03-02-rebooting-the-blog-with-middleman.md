@@ -26,7 +26,7 @@ Middleman is a modern static site generator that solves much of the pain points 
 * It has lots of plugins available; middleman plugins are regular ruby gems, which simplifies things enormously.
 * Configuration stays in a single place, `config.rb` (you could have a `Rakefile` too, but it's optional) instead of the 4 required by Octopress.
 
-As a result, the folder layout of [my middleman-based repo](https://github.com/kikito/kiki.to/tree/source) is much cleaner than [the old octopress-based one](https://github.com/kikito/old-blog/tree/source).
+As a result, the folder layout of [my middleman-based repo](https://github.com/kikito/kiki.to) is much cleaner than [the old octopress-based one](https://github.com/kikito/old-blog/tree/source).
 Creating posts is easier (they have less metadata). Publishing is easier too (very simple commands)
 
 Since I know myself, I'll probably end up adding a `Rakefile` to automate things a bit more, so that instead of using 2 commands to publish stuff I can do it with just one.
