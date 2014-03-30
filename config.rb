@@ -3,7 +3,7 @@ require 'htmlentities'
 ###
 # Site settings
 ###
-
+set :site_lang, 'en'
 set :site_author, "Enrique García Cota"
 set :site_title, "kiki.to"
 set :site_url, "http://kiki.to"
@@ -47,10 +47,6 @@ end
 #   config.output_style = :compact
 # end
 
-###
-# Helpers
-###
-
 # Automatic image dimensions on image_tag helper
 activate :automatic_image_sizes
 
@@ -59,13 +55,6 @@ activate :livereload
 
 # Nice links
 activate :directory_indexes
-
-# Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
 
 set :css_dir, 'css'
 set :js_dir, 'js'
