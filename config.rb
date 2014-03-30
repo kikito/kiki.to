@@ -30,8 +30,6 @@ activate :automatic_image_sizes
 # Reload the browser automatically whenever files change
 activate :livereload
 
-# Nice links
-activate :directory_indexes
 
 activate :autoprefixer, browsers: ['last 2 versions', 'Explorer >= 9']
 
@@ -43,7 +41,7 @@ activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
   blog.prefix = "blog"
 
-  blog.permalink = "{year}/{month}/{day}/{title}/"
+  blog.permalink = "{year}/{month}/{day}/{title}"
   blog.layout = "post"
   blog.summary_separator = /(<!-- MORE -->)/
   blog.default_extension = ".md"
@@ -55,6 +53,10 @@ activate :deploy do |deploy|
   deploy.host   = 'kiki.to'
   deploy.path   = '~/nginx/www'
 end
+
+# Nice links
+activate :directory_indexes
+
 
 # Build-specific configuration
 configure :build do
