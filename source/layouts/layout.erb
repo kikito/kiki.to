@@ -13,12 +13,14 @@
   <body class="<%= page_classes %>">
 
     <header class='site-header'>
-      <h1 class="logo"><a href="/">kiki.to</a></h1>
-      <nav class='site-nav'>
-        <ul class='horizontal-list'>
-          <li><a class='site-nav-link' href="/about">About</a></li>
-        </ul>
-      </nav>
+      <div class="main">
+        <h1 class="logo"><a href="/">kiki.to</a></h1>
+        <nav class='site-nav'>
+          <ul class='horizontal-list'>
+            <li><a class='site-nav-link' href="/about">About</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <hr />
@@ -27,19 +29,27 @@
       <%= yield %>
     </section>
     <footer>
-      <ul class="horizontal-list">
-        <li>
-          <a href='https://github.com/kikito' class='social icon-github' title= 'github: kikito'></a>
-        </li>
-        <li>
-          <a href='https://twitter.com/otikik' class='social icon-twitter' title= 'twitter: otikik'></a>
-        </li>
-        <li>
-          <a href='http://stackoverflow.com/users/312586/kikito' class='social icon-stackoverflow' title= 'stackoverflow: kikito'></a>
-        </li>
-      </ul>
-      <a class='damped left corner' title='<%= feed_title %>' href='<%= feed_url %>'><i class='icon-rss'></i></a>
-      <a class='damped right corner' title='legal stuff' href='/legal'><i class='icon-cc'></i><i class='icon-cc-by'></i></a>
+      <div class="main">
+        <div class="left corner">
+          <a class='social damped' title='legal stuff' href='/legal'><i class='icon-cc'></i> <i class='icon-cc-by'></i></a>
+        </div>
+        <div class="right corner">
+          <ul class='horizontal-list'>
+            <li>
+              <a href='https://github.com/kikito' class='social icon-github' title= 'github: kikito'></a>
+            </li>
+            <li>
+              <a href='https://twitter.com/otikik' class='social icon-twitter' title= 'twitter: otikik'></a>
+            </li>
+            <li>
+              <a href='http://stackoverflow.com/users/312586/kikito' class='social icon-stackoverflow' title= 'stackoverflow: kikito'></a>
+            </li>
+            <li>
+              <a href='<%= feed_url %>' class='social icon-rss' title='<%= feed_title %>'></a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
