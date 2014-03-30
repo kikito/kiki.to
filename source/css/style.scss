@@ -121,6 +121,10 @@ footer{
   bottom: 0;
   width: 100%;
   height: $footer-height;
+  .logo {
+    font-family: $font-family-sans;
+    font-weight: bold;
+  }
   .main {
     height: $footer-height;
   }
@@ -150,6 +154,10 @@ hr {
     margin-left: $typecsset-base-font-size;
     margin-left: 1rem;
   }
+  li:first-child {
+    margin-left: 0;
+  }
+
 }
 
 .unstyled-list {
@@ -167,7 +175,7 @@ a.social, a.site-nav-link, .logo a {
   color: $secondary-color;
 }
 
-a.damped {
+.damped, a.damped, .damped a {
   color: $tertiary-color;
 }
 
