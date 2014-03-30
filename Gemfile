@@ -8,6 +8,7 @@ gem "middleman-livereload"
 gem "middleman-syntax"
 gem "middleman-autoprefixer"
 gem "middleman-deploy"
+gem "middleman-disqus"
 gem "redcarpet"
 gem "nokogiri"
 

@@ -8,18 +8,36 @@ set :site_author, "Enrique García Cota"
 set :site_title, "kiki.to"
 set :site_url, "http://kiki.to"
 
-
 ###
-# Blog settings
+# Middleman settings
 ###
-
-activate :syntax
-activate :autoprefixer, browsers: ['last 2 versions', 'Explorer >= 9']
-
+set :css_dir, 'css'
+set :js_dir, 'js'
+set :images_dir, 'img'
+set :layouts_dir, 'layouts'
 set :markdown_engine, :redcarpet
 set :markdown, :fenced_code_blocks => true, :smartypants => true, :with_toc_data => true
 
-# Time.zone = "UTC"
+###
+# Plugins
+###
+
+activate :syntax
+
+# Automatic image dimensions on image_tag helper
+activate :automatic_image_sizes
+
+# Reload the browser automatically whenever files change
+activate :livereload
+
+# Nice links
+activate :directory_indexes
+
+activate :autoprefixer, browsers: ['last 2 versions', 'Explorer >= 9']
+
+activate :disqus do |d|
+  d.shortname = "kikito"
+end
 
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
@@ -38,29 +56,6 @@ activate :deploy do |deploy|
   deploy.path   = '~/nginx/www'
 end
 
-###
-# Compass
-###
-
-# Change Compass configuration
-# compass_config do |config|
-#   config.output_style = :compact
-# end
-
-# Automatic image dimensions on image_tag helper
-activate :automatic_image_sizes
-
-# Reload the browser automatically whenever files change
-activate :livereload
-
-# Nice links
-activate :directory_indexes
-
-set :css_dir, 'css'
-set :js_dir, 'js'
-set :images_dir, 'img'
-set :layouts_dir, 'layouts'
-
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
@@ -78,6 +73,11 @@ configure :build do
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
 end
+
+
+###
+# Helpers
+###
 
 helpers do
   def superstrip(str)
