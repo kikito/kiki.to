@@ -1,6 +1,6 @@
 ---
 title: 'Rule #2: Return a local table'
-draft: true
+published: false
 ---
 
 This is the second rule of my [Guide to building Lua modules](/blog/2014/03/31/a-guide-to-building-lua-modules).

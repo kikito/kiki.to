@@ -1,6 +1,6 @@
 ---
 title: 'Rule #3: Allow monkeypatching'
-draft: true
+published: false
 ---
 
 I've seen a worrying pattern in some libraries, where they add a metatable at the end to "protect the user from modifying the library".

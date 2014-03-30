@@ -1,6 +1,6 @@
 ---
 title: 'Rule #4: Make stateless modules'
-draft: true
+published: false
 ---
 
 I have been particularly guilty of this breaking this rule in the past.

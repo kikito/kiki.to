@@ -1,12 +1,10 @@
 <ul class='unstyled-list'>
   <% page_articles.sort_by{ |a| "#{a.date}#{a.title}"}.reverse.each_with_index do |article, i| %>
-    <% unless article.data.draft %>
-      <li>
-        <h3 class='detailed-item'>
-          <%= link_to article.title, article, class: 'item', title: superstrip(article.summary) %>
-          <time class='detail' datetime="<%= article.date.utc %>"><%= article.date.strftime('%B %d, %Y') %></time>
-        </h3>
-      </li>
-    <% end %>
+    <li>
+      <h3 class='detailed-item'>
+        <%= link_to article.title, article, class: 'item', title: superstrip(article.summary) %>
+        <time class='detail' datetime="<%= article.date.utc %>"><%= article.date.strftime('%B %d, %Y') %></time>
+      </h3>
+    </li>
   <% end %>
 </ul>
