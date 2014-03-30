@@ -3,6 +3,8 @@
 @import "pygments";
 @import "fonts";
 
+// Variables
+
 $primary-color:    #307EA9;  // links, etc
 $secondary-color:  #555;     // text
 $tertiary-color:   #aaa;     // damped text
@@ -14,14 +16,16 @@ $transparent-color: rgba(0,0,0,0);
 
 $footer-height: 4 * $typecsset-base-line-height;
 
-$small-number: 10px;
+$small-number: 10px; // for small paddings and margins
 
-// This basically means "not mobile"
-@mixin medium-or-big-screen {
+// Mixins
+@mixin bigger-than-mobile {
   @media screen and (min-width: 500px) {
     @content
   }
 }
+
+// Page spacial structure
 
 html {
   position: relative;
@@ -42,11 +46,6 @@ body {
   position: relative;
 }
 
-h1,h2,h3,h4,h5,h6 {
-  font-family: $font-family-sans;
-  font-weight: normal;
-}
-
 .site-header {
   .logo {
     @include typecsset-font-size($typecsset-h2-size);
@@ -56,62 +55,6 @@ h1,h2,h3,h4,h5,h6 {
     position: absolute;
     right: 0;
     bottom: 0;
-  }
-}
-
-time {
-  @include typecsset-font-size($typecsset-base-font-size);
-
-  color: $tertiary-color;
-  letter-spacing: -0.05rem;
-}
-
-.detailed-item {
-  position: relative;
-  .detail {
-    display: none;
-  }
-}
-
-@include medium-or-big-screen {
-  .detailed-item {
-    .item {
-      margin-right: 8rem;
-    }
-    .detail {
-      position: absolute;
-      display: block;
-      right: 0;
-      bottom: 0;
-    }
-  }
-}
-
-
-
-pre, code {
-  font-family: $font-family-mono;
-  background-color: $alt-background-color;
-  box-shadow: inset 0 0 0 1px $detail-color;
-}
-
-code {
-  border-radius: 3px;
-  padding-left: 3px;
-  padding-right: 3px;
-}
-
-pre.highlight {
-  page-break-inside: avoid;
-  padding: $typecsset-magic-number;
-}
-
-a {
-  text-decoration: none;
-  color: $primary-color;
-  transition: color 0.25s ease;
-  &:hover {
-    color: $hover-color;
   }
 }
 
@@ -137,37 +80,22 @@ footer{
   }
 }
 
-hr {
-  @include typecsset-font-size($typecsset-h1-size);
+// Headings
 
-  border: 0;
-  height: 1px;
-  background-image: linear-gradient(left, $transparent-color, $secondary-color, $transparent-color);
+h1,h2,h3,h4,h5,h6 {
+  font-family: $font-family-sans;
+  font-weight: normal;
 }
 
-.horizontal-list {
-  list-style-type: none;
-  margin: 0;
 
-  li {
-    display: inline-block;
-    margin-left: $typecsset-base-font-size;
-    margin-left: 1rem;
-  }
-  li:first-child {
-    margin-left: 0;
-  }
+// Links
 
-}
-
-.unstyled-list {
-  list-style-type: none;
-  margin: 0;
-}
-
-article{
-  p, ul, ol {
-    text-align: justify;
+a {
+  text-decoration: none;
+  color: $primary-color;
+  transition: color 0.25s ease;
+  &:hover {
+    color: $hover-color;
   }
 }
 
@@ -192,16 +120,102 @@ a.social, a.site-nav-link, .logo a {
 }
 
 
+// Lists
 
+.horizontal-list {
+  list-style-type: none;
+  margin: 0;
 
+  li {
+    display: inline-block;
+    margin-left: $typecsset-base-font-size;
+    margin-left: 1rem;
+  }
 
-// Deactivate left margins on mobile
-blockquote, ul, ol, dd {
-  @include typecsset-space(margin-left, 1);
+  li:first-child {
+    margin-left: 0;
+  }
+
 }
-@include medium-or-big-screen {
-  blockquote, ul, ol, dd {
-    @include typecsset-space(margin-left);
+
+.unstyled-list {
+  list-style-type: none;
+  margin: 0;
+}
+
+
+// Detailed-item
+// Similar to a media object, except that the detail is hidden on mobile
+
+.detailed-item {
+  position: relative;
+  .detail {
+    display: none;
+  }
+  @include bigger-than-mobile {
+    .item {
+      margin-right: 8rem;
+    }
+    .detail {
+      position: absolute;
+      display: block;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
+
+// Utilities
+
+.text-centered {
+  text-align: center;
+}
+
+// Other customizations
+
+time {
+  @include typecsset-font-size($typecsset-base-font-size);
+
+  color: $tertiary-color;
+  letter-spacing: -0.05rem;
+}
+
+pre, code {
+  font-family: $font-family-mono;
+  background-color: $alt-background-color;
+  box-shadow: inset 0 0 0 1px $detail-color;
+}
+
+code {
+  border-radius: 3px;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+pre.highlight {
+  page-break-inside: avoid;
+  padding: {
+    top: $typecsset-magic-number/2;
+    bottom: $typecsset-magic-number/2;
+    left: $small-number;
+    right: $small-number;
+  }
+  @include bigger-than-mobile {
+    padding: $typecsset-magic-number;
+  }
+}
+
+hr {
+  @include typecsset-font-size($typecsset-h1-size);
+
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(left, $transparent-color, $secondary-color, $transparent-color);
+}
+
+article{
+  p, ul, ol {
+    text-align: justify;
   }
 }
 
@@ -227,13 +241,17 @@ blockquote {
   }
 }
 
-.pull-right {
-  float: right;
+// Deactivate left margins on mobile
+blockquote, ul, ol, dd {
+  @include typecsset-space(margin-left, 1);
+  @include bigger-than-mobile {
+    @include typecsset-space(margin-left);
+  }
 }
 
-.text-centered {
-  text-align: center;
-}
+
+
+// Icons
 
 [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: $font-family-custom;
