@@ -104,4 +104,12 @@ helpers do
     end
     superstrip(description)
   end
+
+  def feed_url
+    "#{blog.options.prefix.to_s}/feed.xml"
+  end
+
+  def feed_title
+    "#{site_title} - Atom Feed"
+  end
 end

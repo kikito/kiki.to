@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="<%= meta_description %>">
     <title><%= page_title %></title>
-    <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
+    <%= feed_tag :atom, feed_url, title: feed_title %>
     <%= stylesheet_link_tag "style" %>
   </head>
 
@@ -38,7 +38,7 @@
           <a href='http://stackoverflow.com/users/312586/kikito' class='social icon-stackoverflow' title= 'stackoverflow: kikito'></a>
         </li>
       </ul>
-      <a class='damped left corner' title='atom feed' href='/feed.xml'><i class='icon-rss'></i></a>
+      <a class='damped left corner' title='<%= feed_title %>' href='<%= feed_url %>'><i class='icon-rss'></i></a>
       <a class='damped right corner' title='legal stuff' href='/legal'><i class='icon-cc'></i><i class='icon-cc-by'></i></a>
     </footer>
   </body>
