@@ -83,11 +83,15 @@ The multi-line function moves the rest of the parameters several lines down, obs
 
 Names (of modules and methods) tend to be short - almost always a single word. Names with more than 1 word are neither `under_scored` nor `CamelCased` (for example, `getmetatable`).
 
-I must confess that I'm not a fan of that last part. It is clear that no one is going to use nameswithseveralwordsandnoseparations. It's unreadable. By not providing a suitable convention, Lua is encouraging everyone to pick theirs - so there's a mismatch every time someone uses modules from different people.
+I must confess that I'm not a fan of that last part. It is clear that no one is going to use nameswithseveralwordsandnoseparations. It's unreadable. By not providing a suitable convention, Lua is encouraging everyone to pick theirs - so there're Lua
+modules using `under_scores` for everything, other use `CamelCase`, and others have to mix-and-match because they use both kind of modules.
 
 Note that [PiL](http://www.lua.org/pil/16.2.html) uses `CamelCase` but not `under_scores`. As a result, when I need to use several words, I tend to use CamelCase (unless I work in a project where `under_score` is the norm, then I adapt to that).
 
-What seems clear is that names should be short, and consistent. A good reference on this is the [Lua style guide](http://lua-users.org/wiki/LuaStyleGuide).
+I also found out that while most top-level functions are verbs, some of them are not, especially on the `string` library: `string.bytes`, `string.char`, `string.upper`, `string.len`. In this case brevity has prevailed over uniformity. Those function names
+are the exception, in general Lua tends to use (short) verbs for its functions. I think it's safe to say that functions should be named after verb names whenever possible, if we would want to follow Lua's footsteps.
+
+A good reference on naming is the [Lua style guide](http://lua-users.org/wiki/LuaStyleGuide).
 
 ## Conclusion
 
