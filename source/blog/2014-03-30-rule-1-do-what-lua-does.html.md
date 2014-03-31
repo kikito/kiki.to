@@ -95,6 +95,6 @@ These are just some of the traits I was able to extract by studying the standard
 
 If you have doubts about one characteristic that doesn't appear on this guide, ask yourself the question at the beginning of this article.
 
-And if that doesn't help, comment bellow.
+And if that doesn't help, comment below.
 
 
