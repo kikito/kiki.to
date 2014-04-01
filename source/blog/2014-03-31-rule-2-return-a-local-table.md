@@ -31,7 +31,7 @@ You can alter things a little (for example, it is not required that the table va
 
 ## Meta fields
 
-I also recommend adding `_VERSION`, `_DESCRIPTION`, `_LICENSE` & `_URL` fields to all modules, so they look like this:
+I also recommend adding `_VERSION`, `_DESCRIPTION`, `_LICENSE` & `_URL` fields to all modules, so the module declaration looks like this:
 
 ``` lua
 local foobar = {
