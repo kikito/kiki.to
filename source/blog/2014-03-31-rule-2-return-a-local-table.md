@@ -50,7 +50,7 @@ return foobar
 
 These fields are a good idea for various reasons.
 
-`__VERSION` is kind of a standard name in Lua (there is global [`__VERSION` variable](http://www.lua.org/manual/5.2/manual.html#pdf-_VERSION)). Its main purpose is making sure that you got the right version of a library
+`_VERSION` is kind of a standard name in Lua (there is global [`_VERSION` variable](http://www.lua.org/manual/5.2/manual.html#pdf-_VERSION)). Its main purpose is making sure that you got the right version of a library
 loaded up. It answers questions like *"Is this version the development one I'm using, or an old one from LuaRocks?"*.
 
 The rest of the fields are things that you should write at the top of your module anyway - they make for a nice header. But if you write them as module fields instead of, say, comments at the top of the file, they can help
