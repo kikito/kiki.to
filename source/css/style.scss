@@ -1,18 +1,18 @@
-@import "normalize";
-@import "typecsset";
-@import "pygments";
-@import "fonts";
+@import 'normalize';
+@import 'typecsset';
+@import 'pygments';
+@import 'fonts';
 
 // Variables
 
-$primary-color:    #307EA9;  // links, etc
+$primary-color:    #307ea9;  // links, etc
 $secondary-color:  #555;     // text
 $tertiary-color:   #aaa;     // damped text
 $detail-color:     #dedede;  // borders, etc
 $background-color: #fafafa;  // background in code sections
 $alt-background-color: #eee; // background in code sections
-$hover-color: lighten( $primary-color, 10% ); // hover links
-$transparent-color: rgba(0,0,0,0);
+$hover-color: lighten($primary-color, 10%); // hover links
+$transparent-color: rgba(0, 0, 0, 0);
 
 $footer-height: 4 * $typecsset-base-line-height;
 
@@ -51,6 +51,7 @@ body {
     @include typecsset-font-size($typecsset-h2-size);
     font-weight: bold;
   }
+
   .site-nav {
     position: absolute;
     right: 0;
@@ -58,19 +59,22 @@ body {
   }
 }
 
-footer{
+footer {
   position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
   height: $footer-height;
+
   .logo {
     font-family: $font-family-sans;
     font-weight: bold;
   }
+
   .main {
     height: $footer-height;
   }
+
   .corner {
     position: absolute;
     bottom: $small-number;
@@ -82,7 +86,12 @@ footer{
 
 // Headings
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: $font-family-sans;
   font-weight: normal;
 }
@@ -93,17 +102,22 @@ h1,h2,h3,h4,h5,h6 {
 a {
   text-decoration: none;
   color: $primary-color;
-  transition: color 0.25s ease;
+  transition: color .25s ease;
+
   &:hover {
     color: $hover-color;
   }
 }
 
-a.social, a.site-nav-link, .logo a {
+a.social,
+a.site-nav-link,
+.logo a {
   color: $secondary-color;
 }
 
-.damped, a.damped, .damped a {
+.damped,
+a.damped,
+.damped a {
   color: $tertiary-color;
 }
 
@@ -113,7 +127,9 @@ a.site-nav-link {
   text-transform: uppercase;
 }
 
-a.social, a.site-nav-link, .logo a {
+a.social,
+a.site-nav-link,
+.logo a {
   &:hover {
     color: $hover-color;
   }
@@ -149,13 +165,18 @@ a.social, a.site-nav-link, .logo a {
 
 .detailed-item {
   position: relative;
+
   .detail {
     display: none;
   }
+
   @include bigger-than-mobile {
     .item {
-      margin-right: 8rem;
+      display: inline-block;
+      padding-right: 8em;
+      padding-right: 8rem;
     }
+
     .detail {
       position: absolute;
       display: block;
@@ -177,10 +198,11 @@ time {
   @include typecsset-font-size($typecsset-base-font-size);
 
   color: $tertiary-color;
-  letter-spacing: -0.05rem;
+  letter-spacing: -.05rem;
 }
 
-pre, code {
+pre,
+code {
   font-family: $font-family-mono;
   background-color: $alt-background-color;
   box-shadow: inset 0 0 0 1px $detail-color;
@@ -200,6 +222,7 @@ pre.highlight {
     left: $small-number;
     right: $small-number;
   }
+
   @include bigger-than-mobile {
     padding: $typecsset-magic-number;
   }
@@ -213,8 +236,10 @@ hr {
   background-image: linear-gradient(left, $transparent-color, $secondary-color, $transparent-color);
 }
 
-article{
-  p, ul, ol {
+article {
+  p,
+  ul,
+  ol {
     text-align: justify;
   }
 }
@@ -222,21 +247,26 @@ article{
 blockquote {
   @include typecsset-font-size($typecsset-h3-size);
   font-style: italic;
+
   p {
     text-align: left;
-    &:before, &:last-of-type:after {
-      font-family: $font-family-custom;
-      font-style: normal;
-      color: $tertiary-color;
+
+    &:before,
+    &:last-of-type:after {
       @extend %typecsset-vertical-rhythm;
+      font-style: normal;
+      font-family: $font-family-custom;
+      color: $tertiary-color;
     }
+
     &:before {
       @include typecsset-font-size($typecsset-h2-size);
-      padding-right: 0.2em;
+      padding-right: .2em;
     }
+
     &:last-of-type:after {
       @include typecsset-font-size($typecsset-h4-size);
-      padding-left: 0.4em;
+      padding-left: .4em;
     }
   }
 }
@@ -244,16 +274,20 @@ blockquote {
 // Deactivate left margins on mobile
 blockquote, ul, ol, dd {
   @include typecsset-space(margin-left, 1);
+  @include typecsset-space(margin-right, 1);
   @include bigger-than-mobile {
     @include typecsset-space(margin-left);
+    @include typecsset-space(margin-right);
   }
 }
 
 
 
+
 // Icons
 
-[class^="icon-"]:before, [class*=" icon-"]:before {
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
   font-family: $font-family-custom;
   font-style: normal;
   font-weight: normal;
