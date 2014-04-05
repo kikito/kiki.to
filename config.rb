@@ -30,7 +30,6 @@ activate :automatic_image_sizes
 # Reload the browser automatically whenever files change
 activate :livereload
 
-
 activate :autoprefixer, browsers: ['last 2 versions', 'Explorer >= 9']
 
 activate :disqus do |d|
@@ -59,9 +58,19 @@ activate :directory_indexes
 
 
 # Build-specific configuration
+configure :development do
+  activate :google_analytics do |ga|
+    ga.tracking_id = false
+  end
+end
+
 configure :build do
   # For example, change the Compass output style for deployment
   activate :minify_css
+
+  activate :google_analytics do |ga|
+    ga.tracking_id = 'UA-49731031-1'
+  end
 
   # Minify Javascript on build
   # activate :minify_javascript

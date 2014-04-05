@@ -9,6 +9,8 @@ gem "middleman-syntax"
 gem "middleman-autoprefixer"
 gem "middleman-deploy"
 gem "middleman-disqus"
+gem "middleman-google-analytics"
+
 gem "redcarpet"
 gem "nokogiri"
 
