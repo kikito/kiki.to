@@ -21,8 +21,8 @@ xml.feed "xmlns" => "http://www.w3.org/2005/Atom" do
       xml.published article.date.to_time.iso8601
       xml.updated File.mtime(article.source_file).iso8601
       xml.author { xml.name settings.site_author }
-      # xml.summary article.summary, "type" => "html"
-      xml.content article.body, "type" => "html"
+      xml.summary article.summary, "type" => "html"
+      xml.content "#{article.body} <p><a href='#{URI.join(site_url, article.url)}#comments'>Go to the full site to see the comments</a></p>", "type" => "html"
     end
   end
 end
