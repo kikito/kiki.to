@@ -271,8 +271,23 @@ blockquote {
   }
 }
 
+cite {
+  @include typecsset-font-size($typecsset-h5-size);
+  display: block;
+  text-align: right;
+
+  &:before {
+    content: '–';
+  }
+}
+
 // Deactivate left margins on mobile
-blockquote, ul, ol, dd {
+
+blockquote,
+cite,
+ul,
+ol,
+dd {
   @include typecsset-space(margin-left, 1);
   @include typecsset-space(margin-right, 1);
   @include bigger-than-mobile {
