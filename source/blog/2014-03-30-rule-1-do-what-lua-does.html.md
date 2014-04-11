@@ -2,7 +2,7 @@
 title: "Rule #1: Do what Lua does"
 ---
 
-This is the first rule of my [Guide to building Lua modules](/blog/2014/03/31/a-guide-to-building-lua-modules).
+This is the first rule of my [Guide to building Lua modules](/blog/2014/03/30/a-guide-to-building-lua-modules).
 
 <!-- MORE -->
 
