@@ -166,7 +166,7 @@ I think the benefits outweight the inconveniences on this particular case. The i
 
 ## Conclusion
 
-I started defining what is state, and what means to be _statefull_ and _stateless_.
+I started defining what is state, and what means to be _stateful_ and _stateless_.
 
 I then explained how multithreaded code, even if it isn't provided by default with Lua, does in fact exist, and it doesn't merge well with stateful modules.
 
