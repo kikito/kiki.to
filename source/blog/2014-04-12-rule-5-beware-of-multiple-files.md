@@ -183,7 +183,7 @@ loaded directly from the current folder - only if they are installed on the syst
 
 There are four ways to solve this.
 
-One way which I **dont** recommend is simply doing `require 'my-package.init'` instead of `require 'my-package'`. While this will work, it's not ideal,
+One way which I **don't** recommend is simply doing `require 'my-package.init'` instead of `require 'my-package'`. While this will work, it's not ideal,
 since the package will be loaded differently when using a local version or a luarocks version. It's easy to have both of them simultaneously loaded in the
 same program.
 
