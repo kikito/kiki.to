@@ -45,9 +45,9 @@ Lua uses a global variable called `package` to store information about modules a
 
 This is how `package.path` looks by default:
 
-``` lua
-print(package.path)
-./?.lua;/usr/local/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?/init.lua;/usr/local/lib/lua/5.1/?.lua;/usr/local/lib/lua/5.1/?/init.lua
+``` txt
+./?.lua;/usr/local/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?/init.lua; \
+/usr/local/lib/lua/5.1/?.lua;/usr/local/lib/lua/5.1/?/init.lua
 ```
 
 While not very easy to parse for humans, this string is used to "look for modules" in several places. The best way to see it in action is by
@@ -86,11 +86,11 @@ and then list and `require` these submodules from another module called `init.lu
 
 So your package might end up looking like this:
 
-``` bash
+``` txt
 my-package
-  ├── init.lua
-  ├── module1.lua
-  └── module2.lua
+  +-- init.lua
+  +-- module1.lua
+  `-- module2.lua
 ```
 
 Now we just need a way to load `module1.lua` and `module2.lua` in `init.lua`. It turns out that this is also tricky.
@@ -153,13 +153,13 @@ Ok so now we have a folder with a `init.lua` file that uses the `current_folder`
 
 So let's use it!
 
-```bash
+``` txt
 $ tree
 .
-└── my-package
-    ├── init.lua
-    ├── module1.lua
-    └── module2.lua
++-- my-package
+    +-- init.lua
+    +-- module1.lua
+    `-- module2.lua
 
 1 directory, 3 files
 
@@ -167,15 +167,15 @@ $ lua
 Lua 5.1.5  Copyright (C) 1994-2012 Lua.org, PUC-Rio
 > require 'my-package'
 stdin:1: module 'my-package' not found:
-	no field package.preload['my-package']
-	no file './my-package.lua'
-	no file '/usr/local/share/lua/5.1/my-package.lua'
-	no file '/usr/local/share/lua/5.1/my-package/init.lua'
-	no file '/usr/local/lib/lua/5.1/my-package.lua'
-	no file '/usr/local/lib/lua/5.1/my-package/init.lua'
-	no file './my-package.so'
-	no file '/usr/local/lib/lua/5.1/my-package.so'
-	no file '/usr/local/lib/lua/5.1/loadall.so'
+    no field package.preload['my-package']
+    no file './my-package.lua'
+    no file '/usr/local/share/lua/5.1/my-package.lua'
+    no file '/usr/local/share/lua/5.1/my-package/init.lua'
+    no file '/usr/local/lib/lua/5.1/my-package.lua'
+    no file '/usr/local/lib/lua/5.1/my-package/init.lua'
+    no file './my-package.so'
+    no file '/usr/local/lib/lua/5.1/my-package.so'
+    no file '/usr/local/lib/lua/5.1/loadall.so'
 ```
 
 Lua can't find the package - It turns out that by default, `package.path` does *not* try to load `?/init.lua` - in other words, _local packages can not be
@@ -202,13 +202,13 @@ return require 'my-package.init'
 
 So the folder structure will end up like this:
 
-``` bash
+``` txt
 .
-├── my-package
-│   ├── init.lua
-│   ├── module1.lua
-│   └── module2.lua
-└── my-package.lua
++-- my-package
+|   +-- init.lua
+|   +-- module1.lua
+|   `-- module2.lua
+`-- my-package.lua
 ```
 
 This will make `require 'my-package'` work, even without modifying `package.path` - the `my-package.lua` file will be loaded, and from there we can load `init.lua`.
