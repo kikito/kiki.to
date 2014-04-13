@@ -2,7 +2,7 @@
 title: 'Rule #4: Make stateless modules'
 ---
 
-This is the fourht rule of my [Guide to building Lua modules](/blog/2014/03/30/a-guide-to-building-lua-modules).
+This is the fourth rule of my [Guide to building Lua modules](/blog/2014/03/30/a-guide-to-building-lua-modules).
 
 <!-- MORE -->
 
