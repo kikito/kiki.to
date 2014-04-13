@@ -16,7 +16,7 @@ set :js_dir, 'js'
 set :images_dir, 'img'
 set :layouts_dir, 'layouts'
 set :markdown_engine, :redcarpet
-set :markdown, :fenced_code_blocks => true, :smartypants => true, :with_toc_data => true
+set :markdown, :fenced_code_blocks => true, :smartypants => true, :with_toc_data => true, :autolink => true
 
 ###
 # Plugins
