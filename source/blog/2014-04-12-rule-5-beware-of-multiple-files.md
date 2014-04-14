@@ -19,7 +19,7 @@ Writing packages in a portable way is more difficult than it seems. This is part
 
 Lua can run in a lot of environments: from a huge multi-core server with several terabytes of RAM, to a tiny embedded microprocessor
 with 200 KB of memory - and a custom C compiler. In order to remain portable, Lua is written
-in a platform-independent subset of C ([C99](http://en.wikipedia.org/wiki/C99) to be exact).
+in a platform-independent subset of C ([C89](http://en.wikipedia.org/wiki/ANSI_C) to be exact).
 
 So Lua assumes very little about the platform in which it runs. The concept of _filesystem_ is reduced to a minimal expression . To lua, every file loaded via
 [`loadfile`](http://www.lua.org/pil/8.html) or [`require`](http://www.lua.org/pil/8.1.html) is identified by a _path_ - a string. This string is passed to the
