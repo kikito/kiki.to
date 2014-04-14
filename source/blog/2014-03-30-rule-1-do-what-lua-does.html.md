@@ -19,7 +19,7 @@ All the top-level modules are very concise and specific; it is desirable that yo
 This doesn't mean that they should provide a single function, but the functions they provide should all
 be grouped under the same umbrella.
 
-[Penlight](http://stevedonovan.github.io/Penlight) is a clear example of a function that doesn't follow this rule. It is a big library that does many different things.
+[Penlight](http://stevedonovan.github.io/Penlight) is a clear example of a library that doesn't follow this rule. It is big, and does many different things.
 
 
 ## No `self` on the top-level functions
