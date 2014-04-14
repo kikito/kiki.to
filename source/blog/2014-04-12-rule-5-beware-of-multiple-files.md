@@ -224,7 +224,7 @@ Here's a discussion on the mailing list, detailing both sides of the discussion:
 
 http://lua-users.org/lists/lua-l/2009-05/msg00499.html
 
-I personally think that `package.path` should have included `?/init.lua`. As it stantds, it's an inconsistent default, which
+I personally think that `package.path` should include `?/init.lua`. As it stantds, it's an inconsistent default, which
 works in some cases and not in others.
 
 But until that is fixed, I favor using both files - `init.lua` and `my-package.lua`. I don't think it's ideal, but I think it's the best compromise
