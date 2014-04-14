@@ -103,7 +103,7 @@ This is a very simple example of a module implementing addition and multiplicati
 
 Notice how the `mult` function uses a local reference to `sum`, instead of using `sumult.sum`.
 
-While it (very marginally, in most cases) faster, it also presents an issue: If I was the user of this module, I would expect this to return true:
+While using the local reference is (very marginally, in most cases) faster, it also presents an issue: If I was the user of this module, I would expect this to return true:
 
 ``` lua
 local sumult = require 'sumult'

@@ -12,7 +12,7 @@ I have been particularly guilty of this breaking this rule in the past.
 
 Something _stateful_ is something which has _state_. Something _stateless_ is something which doesn't have _state_.
 
-_State_ is a general programming term that can be think intuitively as _internal memory_. In a stateful module, some functions
+_State_ is a general programming term that can be thought of intuitively as _internal memory_. In a stateful module, some functions
 can return different results with the same parameters (because some internal memory of the module - its _state_ - has changed).
 
 Here's an example of a stateful module:

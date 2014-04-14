@@ -13,7 +13,7 @@ it is sometimes desirable to "split" its sourcecode into several files.
 
 In Lua, when a library is divided into several files, each of the files is called a _module_, while the library itself is called a _package_.
 
-Writing packages in a portable way is more difficult than it seems. This is partly due to some design decisions in the Lua.
+Writing packages in a portable way is more difficult than it seems. This is partly due to some design decisions in Lua.
 
 ## An unassuming language
 
