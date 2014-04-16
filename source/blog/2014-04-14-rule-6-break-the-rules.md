@@ -10,7 +10,7 @@ None of the previous 5 rules is absolute. Occasionally, the best course of actio
 
 This rule acknowledges that. But this doesn't mean you have _carte blanche_ to break any rule at any moment. The complete text of this rule is this:
 
-> Break the rules when you have a good reason.
+> Break the rules when you have a good reason, and say it
 
 The rule says that you must _justify_ every breakage with a _good reason_. But which reasons are _good_?
 
@@ -30,6 +30,24 @@ Bad reasons, on the other hand, are subjective, based in the _unknowns_, or just
 * _"I just don't like [monkeypatching](2014/04/04/rule-3-allow-monkeypatching)"_ – subjective, goes against other rules ([do what Lua does](/blog/2014/03/30/rule-1-do-what-lua-does/)).
 * _"I don't know how to implement this module without state ([rule #4](rule-4-make-stateless-modules))"_ (based in unknowns, lazy)
 * _"I don't have time to apply this"_ (no remedial action)
+
+## Say it
+
+That last bit is also important. If you are breaking one of the rules, you should be explicit about it.
+
+Write down the reasons in an obvious, visible place. A "Warnings" section in your module's README / docs, for example.
+
+When appropiate, you might want to add a small comment on the source code, too:
+
+``` lua
+mymodule.trigonometricFoo = function(bar)
+  -- Localizations make performance test #3 40% faster
+  local sin,cos = math.sin, math.cos
+  local baz     = mymodule.trigonometricBaz
+  ...
+end
+```
+
 
 ## Conclusion
 
