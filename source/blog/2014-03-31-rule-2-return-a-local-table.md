@@ -39,7 +39,7 @@ local foobar = {
   _DESCRIPTION = 'Library for transforming foo in bar',
   _URL         = 'http://foobar.page.or.repo.com',
   _LICENSE     = [[
-    ... (license text)
+    ... (license text, or name/url for long licenses)
   ]]
 }
 
