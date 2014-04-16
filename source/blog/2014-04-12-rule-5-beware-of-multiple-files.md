@@ -43,7 +43,9 @@ Lua uses a global variable called `package` to store information about modules a
 * `package.path` is a string of paths, separated by semicolons. When a module is required (e.g. with `require 'foo'`), `package.path` is used to "try" several places
   in the local filesystem where the modules can be.
 
-This is how `package.path` looks by default:
+`package` has [more properties](http://www.lua.org/manual/5.2/manual.html#pdf-package.config), but we'll concentrate on `package.path` here.
+
+This is how `package.path` looks by default in OS X:
 
 ``` txt
 ./?.lua;/usr/local/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?/init.lua; \
@@ -100,7 +102,7 @@ Now we just need a way to load `module1.lua` and `module2.lua` in `init.lua`. It
 The obvious way to reference `module1` and `module2` from `init.lua` is by using the package name, `my-package`:
 
 ``` lua
--- init.lua
+-- my-module/init.lua
 local module1 = require 'my-package.module1'
 local module2 = require 'my-package.module2'
 
@@ -111,7 +113,18 @@ local my_package = {}
 return my_package
 ```
 
-This strategy could be used to cross-reference modules from within the package itself; for example `module1` could be required from `module2`.
+This strategy could be used to cross-reference modules from within the package itself; for example `module1` could be required from `module2`:
+
+``` lua
+-- my-module/module2.lua
+local module1 = require 'my-package.module1'
+
+local module2 = {}
+
+...
+
+return module2
+```
 
 Unfortunately this has two problems:
 
@@ -121,7 +134,7 @@ Unfortunately this has two problems:
 
 It would be much easier if we could reference the "current folder" when doing require; but as we mentioned at the beginning of the article,
 Lua does not provide any folder-related facilities. We can, however, use something: the expression `(...)`, when evaluated at the top of a
-module, returns the "path" used to require it.
+module, returns the "path" used to require it (this is mentioned in [`require's doc`](http://www.lua.org/manual/5.2/manual.html#pdf-require)).
 
 ```lua
 print(...)
@@ -131,21 +144,32 @@ The instruction above, when executed in the "top scope" of a module (i.e. outsid
 `require` to load the module. In other words, if the instruction above was in a module loaded via `require 'foo.bar.baz'`, we would get `foo.bar.baz`
 in the standard output.
 
-Using that knowledge and some Lua pattern matching, we can build our own "current folder" and then use it to require modules using a relative path, like this:
+Using that knowledge and some Lua pattern matching, we can build our own "current folder" and then use it to require modules using a relative path.
+
+`init.lua` can be required with the file name (`require 'my-module.init'`) or without (`require 'my-module'`), so we must remove the `.init` part from `(...)`, but only when it's present.
 
 ```lua
--- init.lua
+-- my-module/init.lua
 
-local current_folder = (...):match("(.+)%.[^%.]+$") or (...)
+local current_folder = (...):gsub('%.init$', '') -- "my-module"
 
 local module1 = require(current_folder .. '.module1')
 local module2 = require(current_folder .. '.module2')
 
 ... -- same as before
 ```
+`(...)` ends with the "module name" in all the other modules of the package (`module1` & `module2` in this case), so we use a pattern always remove the last dot and everything behind it:
 
-Assuming a well-constructed `package.path`, the `current_folder` expression can be used in any required file (be it `init.lua` or `module1.lua`)
-to get its "containig folder path" that required it.
+```lua
+-- my-module/module2.lua
+
+local current_folder = (...):gsub('%.[^%.]+$', '')
+local module1 = require(current_folder .. '.module2')
+
+... -- same as before
+```
+
+This "`current_folder` trick" will work with the default `package.path`, and with other "sane" values for it.
 
 ## One last hurdle: local packages
 
@@ -183,9 +207,9 @@ loaded directly from the current folder - only if they are installed on the syst
 
 There are four ways to solve this.
 
-One way which I **don't** recommend is simply doing `require 'my-package.init'` instead of `require 'my-package'`. While this will work, it's not ideal,
-since the package will be loaded differently when using a local version or a luarocks version. It's easy to have both of them simultaneously loaded in the
-same program.
+One way which I **don't** recommend is simply doing `require 'my-package.init'` instead of `require 'my-package'`. While this will work,
+the package will be loaded differently when using a local version or a luarocks version. It's easy to have both of them simultaneously loaded in the
+same program by mistake.
 
 The second alternative is modifying `package.path` to include `?/init.lua` before requiring any local package. This will also work, but I'm not a big fan of
 modifying a global variable just so that a package can be loaded.
@@ -193,11 +217,12 @@ modifying a global variable just so that a package can be loaded.
 The third alternative is merging all files into a single one called `my-package.lua`, [like javascript libraries often do](https://github.com/gruntjs/grunt-contrib-concat).
 But I would rather use a feature from inside the language, instead of sidestepping the problem using external tools to concatenate the files.
 
-The final alternative is adding an extra file, called `my-package.lua`, which `require`s and returns `my-package.init`:
+The final alternative is adding an extra file, called `my-package.lua`, which `require`s and returns `my-package.init`. We can use `(...)` here too, so we can
+change the file name and the folder name to something else later on, and they will still work:
 
 ``` lua
 -- my-package.lua
-return require 'my-package.init'
+return require((...) .. '.init')
 ```
 
 So the folder structure will end up like this:
@@ -220,7 +245,7 @@ we could require `module1` and `module2` from `my-package.lua` and avoid using `
 `init.lua` should be removed from `package.path`. Others argue that this would break backwards-compatibility with a lot of libraries,
 and that having all the modules inside a folder is tidier. So what we need is just adding `?/init.lua` to `package.path`.
 
-Here's a discussion on the mailing list, detailing both sides of the discussion:
+Here's a mailing list thread, displaying both sides of the discussion:
 
 http://lua-users.org/lists/lua-l/2009-05/msg00499.html
 
