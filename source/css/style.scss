@@ -224,6 +224,8 @@ code {
 }
 
 pre.highlight {
+  overflow: auto;
+  white-space: pre;
   page-break-inside: avoid;
   padding: {
     top: $typecsset-magic-number/2;
