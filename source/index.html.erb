@@ -1,5 +1,5 @@
 <ul class='unstyled-list'>
-  <% page_articles.sort_by{ |a| "#{a.date}#{a.title}"}.reverse.each_with_index do |article, i| %>
+  <% listed_articles.each do |article| %>
     <li>
       <h3 class='detailed-item'>
         <%= link_to article.title, article, class: 'item', title: superstrip(article.summary) %>

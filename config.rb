@@ -117,6 +117,13 @@ helpers do
     superstrip(description)
   end
 
+  def listed_articles
+    blog.articles
+      .select{ |a| a.data.listed != false }
+      .sort_by{ |a| "#{a.date}#{a.title}" }
+      .reverse
+  end
+
   def feed_url
     "#{blog.options.prefix.to_s}/feed.xml"
   end
