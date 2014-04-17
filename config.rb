@@ -3,9 +3,17 @@ require 'htmlentities'
 ###
 # Site settings
 ###
+
+# Site language (used in the html lang attribute)
 set :site_lang, 'en'
+
+# Site author (comes in metadata places like the rss feed)
 set :site_author, "Enrique García Cota"
+
+# Site title (used in the page title, mostly)
 set :site_title, "kiki.to"
+
+# The main url of the site, for creating some links on the feed
 set :site_url, "http://kiki.to"
 
 ###
@@ -22,6 +30,7 @@ set :markdown, :fenced_code_blocks => true, :smartypants => true, :with_toc_data
 # Plugins
 ###
 
+# Code syntax highlighting
 activate :syntax
 
 # Automatic image dimensions on image_tag helper
@@ -30,12 +39,15 @@ activate :automatic_image_sizes
 # Reload the browser automatically whenever files change
 activate :livereload
 
+# Use autoprefixer to automatically generate css prefixes for css rules
 activate :autoprefixer, browsers: ['last 2 versions', 'Explorer >= 9']
 
+# Activate disqus
 activate :disqus do |d|
   d.shortname = "kikito"
 end
 
+# Use the blog extension
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
   blog.prefix = "blog"
@@ -46,6 +58,7 @@ activate :blog do |blog|
   blog.default_extension = ".md"
 end
 
+# Makes it possible to deploy to my website
 activate :deploy do |deploy|
   deploy.build_before = true # default: false
   deploy.method = :rsync
