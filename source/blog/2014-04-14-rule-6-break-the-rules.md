@@ -2,7 +2,7 @@
 title: "Rule #6: Break the rules"
 ---
 
-This is the sixth rule of my [Guide to building Lua modules](/blog/2014/03/30/a-guide-to-building-lua-modules).
+This is the sixth rule of my [Guide to authoring Lua modules](/blog/2014/03/30/a-guide-to-authoring-lua-modules).
 
 <!-- MORE -->
 

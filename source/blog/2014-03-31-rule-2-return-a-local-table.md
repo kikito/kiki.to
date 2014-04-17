@@ -2,7 +2,7 @@
 title: 'Rule #2: Return a local table'
 ---
 
-This is the second rule of my [Guide to building Lua modules](/blog/2014/03/30/a-guide-to-building-lua-modules).
+This is the second rule of my [Guide to authoring Lua modules](/blog/2014/03/30/a-guide-to-authoring-lua-modules).
 
 <!-- MORE -->
 
