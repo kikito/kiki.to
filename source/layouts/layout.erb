@@ -5,10 +5,20 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="<%= meta_description %>">
+    <% if current_page.data.redirect_to %>
+      <meta http-equiv="refresh" content="6;<%= current_page.data.redirect_to %>">
+    <% end %>
     <title><%= page_title %></title>
     <%= feed_tag :atom, feed_url, title: feed_title %>
     <%= stylesheet_link_tag "style" %>
     <%= google_analytics %>
+    <% if current_page.data.redirect_to %>
+      <script type="text/javascript">
+        settimeout(650, function() {
+          window.location.href = "<%= current_page.data.redirect_to %>";
+        });
+      </script>
+    <% end %>
   </head>
 
   <body class="<%= page_classes %>">
@@ -27,7 +37,14 @@
     <hr />
 
     <section class="main">
-      <%= yield %>
+      <% if current_page.data.redirect_to %>
+        <h1>Redirecting ...</h1>
+        <p>This page has moved. I am attempting to redirect you to its new location now.</p>
+        <p>If you don't get redirected in some seconds, please click the following link:</p>
+        <ul><li><%= link_to current_page.data.redirect_to, current_page.data.redirect_to %></li></ul>
+      <% else %>
+        <%= yield %>
+      <% end %>
     </section>
     <footer>
       <div class="main">
