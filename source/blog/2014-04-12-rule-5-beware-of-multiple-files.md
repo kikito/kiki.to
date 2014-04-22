@@ -102,7 +102,7 @@ Now we just need a way to load `module1.lua` and `module2.lua` in `init.lua`. It
 The obvious way to reference `module1` and `module2` from `init.lua` is by using the package name, `my-package`:
 
 ``` lua
--- my-module/init.lua
+-- my-package/init.lua
 local module1 = require 'my-package.module1'
 local module2 = require 'my-package.module2'
 
@@ -116,7 +116,7 @@ return my_package
 This strategy could be used to cross-reference modules from within the package itself; for example `module1` could be required from `module2`:
 
 ``` lua
--- my-module/module2.lua
+-- my-package/module2.lua
 local module1 = require 'my-package.module1'
 
 local module2 = {}
@@ -146,12 +146,12 @@ in the standard output.
 
 Using that knowledge and some Lua pattern matching, we can build our own "current folder" and then use it to require modules using a relative path.
 
-`init.lua` can be required with the file name (`require 'my-module.init'`) or without (`require 'my-module'`), so we must remove the `.init` part from `(...)`, but only when it's present.
+`init.lua` can be required with the file name (`require 'my-package.init'`) or without (`require 'my-package'`), so we must remove the `.init` part from `(...)`, but only when it's present.
 
 ```lua
--- my-module/init.lua
+-- my-package/init.lua
 
-local current_folder = (...):gsub('%.init$', '') -- "my-module"
+local current_folder = (...):gsub('%.init$', '') -- "my-package"
 
 local module1 = require(current_folder .. '.module1')
 local module2 = require(current_folder .. '.module2')
@@ -161,7 +161,7 @@ local module2 = require(current_folder .. '.module2')
 `(...)` ends with the "module name" in all the other modules of the package (`module1` & `module2` in this case), so we use a pattern always remove the last dot and everything behind it:
 
 ```lua
--- my-module/module2.lua
+-- my-package/module2.lua
 
 local current_folder = (...):gsub('%.[^%.]+$', '')
 local module1 = require(current_folder .. '.module2')
