@@ -23,7 +23,7 @@ in a platform-independent subset of C ([C89](http://en.wikipedia.org/wiki/ANSI_C
 
 So Lua assumes very little about the platform in which it runs. The concept of _filesystem_ is reduced to a minimal expression . To lua, every file loaded via
 [`loadfile`](http://www.lua.org/pil/8.html) or [`require`](http://www.lua.org/pil/8.1.html) is identified by a _path_ - a string. This string is passed to the
-operative system, which will load the file into a string and return it to Lua. And that's it. To Lua, the filesystem "a black box that transforms paths into source".
+operative system, which will load the file into a string and return it to Lua. And that's it. To Lua, the filesystem is "a black box that transforms paths into source".
 
 There isn't even a concept of _directory_ or _folder_ in Lua - C can't handle folders in a platform-independent way, so neither can Lua. You can not do
 seemingly trivial things like listing the contents of a folder; One has to rely on external libraries like [luafilesystem](http://keplerproject.github.io/luafilesystem/) to do so.
