@@ -144,7 +144,7 @@ The instruction above, when executed in the "top scope" of a module (i.e. outsid
 `require` to load the module. In other words, if the instruction above was in a module loaded via `require 'foo.bar.baz'`, we would get `foo.bar.baz`
 in the standard output.
 
-Using that knowledge and some Lua pattern matching, we can build our own "current folder" and then use it to require modules using a relative path.
+Using that knowledge and some Lua pattern matching, we can build our own "current folder" and then use it to require modules in a relative way.
 
 `init.lua` can be required with the file name (`require 'my-package.init'`) or without (`require 'my-package'`), so we must remove the `.init` part from `(...)`, but only when it's present.
 
@@ -158,7 +158,7 @@ local module2 = require(current_folder .. '.module2')
 
 ... -- same as before
 ```
-`(...)` ends with the "module name" in all the other modules of the package (`module1` & `module2` in this case), so we use a pattern always remove the last dot and everything behind it:
+`(...)` ends with the "module name" in all the other modules of the package (`module1` & `module2` in this case), so we use a pattern to always remove the last dot and everything behind it:
 
 ```lua
 -- my-package/module2.lua
