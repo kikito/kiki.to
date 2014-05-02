@@ -20,4 +20,4 @@ Recently I have been working on [Lua](http://www.lua.org) with [nginx](http://ng
 
 If you want to see a sample of my work, please give a look to my [github profile](https://github.com/kikito).
 
-I tweet about technical things in [@otikik](https://twitter.com/kikito).
+I tweet about technical things in [@otikik](https://twitter.com/otikik).
