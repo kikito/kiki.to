@@ -346,4 +346,8 @@ dd {
 .icon-quote-left:before { content: '\201c'; } /* '“' */
 .icon-quote-right:before { content: '\201d'; } /* '”' */
 
+iframe {
+  max-width: 100%;
+}
+
 
