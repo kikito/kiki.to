@@ -111,7 +111,7 @@ local sumult = require 'sumult'
 -- override sumult.sum
 sumult.sum = function(a,b) return 1 end
 
-print(sumult.mult(5,2) == 5)
+print(sumult.mult(5,2) == 1)
 ```
 
 However, `sumult.mult(5,2)` still returns `10`, even after I have overriden `sumult.sum`.
