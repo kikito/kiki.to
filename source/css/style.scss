@@ -347,7 +347,10 @@ dd {
 .icon-quote-right:before { content: '\201d'; } /* '”' */
 
 iframe {
-  max-width: 100%;
+  width: 100%;
+  height: 20 * $typecsset-base-line-height;
+  border: none;
+  box-shadow: 0 0 10px $detail-color;
 }
 
 
