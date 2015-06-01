@@ -18,8 +18,8 @@ I gave this talk to the "Adobe API Group". They contacted me via email to see if
 (they explicitly said so).
 
 The experience was unusual for me for several reasons: first, this was the first time I was asked to
-give a talk about a specific subject. Until now, I had picked the subjects completely. It was a
-bit of a challenge, but I enjoyed it.
+give a talk about a specific subject. Until now, I had picked them at my own volition. It was
+challenging, but I enjoyed it.
 
 The other surprising thing was the presentation setup. It was a teleconference, which is ok.
 I was told that people would listen to the talk from their homes or offices, but they would not
