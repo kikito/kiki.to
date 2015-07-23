@@ -10,7 +10,7 @@ This was not part of a conference or anything; they just like to bring someone t
 I've got this self-imposed duty of preaching the Lua Word to the masses. Knowing that a lot of people in CartoDB use javascript,
 I thought it was a good opportunity to compare both languages.
 
-Here are the slides I used. As usual, my slides don't really stand well by themselves. I will explain the main points below.
+Here are the slides I used. As usual, my slides don't really stand well by themselves. I will to explain the main points below.
 
 <iframe src="https://kikito.github.io/lua-for-javascripters/"></iframe>
 
