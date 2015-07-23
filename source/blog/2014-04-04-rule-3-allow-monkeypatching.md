@@ -1,16 +1,26 @@
 ---
-title: 'Rule #3: Allow monkeypatching'
+title: 'Rule #3: Allow extensions'
 ---
 
 This is the third rule of my [Guide to authoring Lua modules](/blog/2014/03/30/a-guide-to-authoring-lua-modules).
 
 <!-- MORE -->
 
-## SpiderMonkey
+## Extensions and Monkeypatching
 
-[Monkeypatching](http://en.wikipedia.org/wiki/Monkey_patch) is the act of "modifiying core parts of a language or system" (read the previous wikipedia article before to learn more).
+Lua is a *highly extensible language*. It allows you to add new functions to existing modules. For example:
 
-Lua is a *highly monkeypatchable language*. Consider the following example:
+``` lua
+math.clamp = function(x, min, max)
+  return math.min(math.max(min, x), max)
+end
+
+print(math.clamp(10, 0, 5)) -- 5
+```
+
+[Monkeypatching](http://en.wikipedia.org/wiki/Monkey_patch) is the act of "modifying core parts of a language or system" (read the previous wikipedia article before to learn more).
+
+Lua is a *also highly monkeypatchable*. Consider the following example:
 
 ``` lua
 math.random = function()
@@ -28,9 +38,11 @@ This kind of flexibility is powerful. But:
 
 <cite><a href="http://en.wikipedia.org/wiki/Uncle_Ben">Uncle Ben</a></cite>
 
-With monkeypatching you can do lots of interesting and subltle things. But you can also make your program stop working. Or worse, create hard-to detect incompatibilities and bugs.
+With monkeypatching you can do lots of interesting and subtle things. But you can also make your program stop working.
+Or worse, create hard-to detect incompatibilities and bugs.
 
-Some module authors, perhaps used to less permissive languages, are very sensitive to these risks. So they try to prevent as much monkeypatching as they can.
+Some module authors, perhaps used to less permissive languages, are very sensitive to these risks.
+So they make great efforts to prevent monkeypatching in their libraries.
 
 ## Training wheels
 
@@ -69,57 +81,17 @@ monkeypatching they can do.
 
 Don't do that.
 
-Lua is a *dynamic* language. Your users are supposed to be able to tinker if they want to. It's dangerous, yes, but it's also beautiful, and it's one of the things that make Lua special.
-[Do what Lua does](2014/03/30/rule-1-do-what-lua-does/).
+Lua is a *dynamic* language. Your users are supposed to be able to tinker if they want to. It's dangerous, yes, but it is one of the things that make Lua special. Remember:
+*[Do what Lua does](2014/03/30/rule-1-do-what-lua-does/)*.
 
-Also, consider that despite whatever contrivances you add to your module, *the rest of the language remains highly customizable anyway*.
+Consider that despite whatever contrivances you add to your module, *the rest of the language remains highly customizable anyway*.
 
 *Training wheels are of little use in a freeway*.
 
+Notice that these training wheels, critically, also prevent extending the
 
-## Beware of locals
 
-Note that if you really want to empower your users to tinker with your modules as they please, there is an extra precaution that you might want to take: Be mindful of local variables used to reference public module functions.
-
-Consider this case:
-
-``` lua
-local sumult = {}
-
-local sum = function(a,b) return a+b end
-local mult = function(a,b)
-  local result = 0
-  for i=1,b do result = sum(result, a) end
-  return result
-end
-
-sumult.sum = sum
-sumult.mult = mult
-
-return sumult
-```
-
-This is a very simple example of a module implementing addition and multiplication.
-
-Notice how the `mult` function uses a local reference to `sum`, instead of using `sumult.sum`.
-
-While using the local reference is (very marginally, in most cases) faster, it also presents an issue: If I was the user of this module, I would expect this to return true:
-
-``` lua
-local sumult = require 'sumult'
-
--- override sumult.sum
-sumult.sum = function(a,b) return 1 end
-
-print(sumult.mult(5,2) == 1)
-```
-
-However, `sumult.mult(5,2)` still returns `10`, even after I have overriden `sumult.sum`.
-
-So I am forced to either modify both functions after including `summult`, or edit the source module (which might be deep inside the luarocks folder).
-
-In my list of priorities, ease of monkeypatching is higher than small speed gains. Unless the use of a local internal reference is justified, I recommend you that you don't *localize* the references to
-public methods.
+## Localizing All Functions is not a Good Practice
 
 > Locals are faster
 
@@ -153,10 +125,7 @@ Your code is 20 or 30 lines of code longer now. Yet, outside of the specific cas
 
 *It's like trying to make a bike slightly faster by painting it with lighter paint.*
 
-Worse still: by making all the functions localized, you are hiding which ones *really* need to be localized. Someone might come after you, read my previous frase, and remove all the localizations. But what if `sin` and `cos`
-in particular were *really* used extensively in a numeric loop, somewhere?
-
-My recommendation to avoid this particular can of worms is using the localizations at the beginning of every function, and *only for the functions where performance tests show significant speed increases*:
+My recommendation is: do that *only inside the functions where performance tests show significant speed increases*. In other words, do this:
 
 ``` lua
 local maintainablemodule = {}
@@ -172,15 +141,17 @@ end
 return maintainablemodule
 ```
 
-In some cases it's ok to localize some references at the top of the module - for example, if you are doing a trigonometry module, it will probably make sense to localize the trigonometric functions at the beginning
-of the module, but only because most functions in the module will use them.
+In some cases it's ok to localize some references at the top of the module - for example, if you are doing a trigonometry module,
+it might make sense to localize the trigonometric functions at the start, but only because most functions in the module will use them.
 
-You shouldn't be localizing `pairs` in that module though.
+In any case, when you are doing performance-related changes, your guiding principle should be performance tests, not human intuition. We are
+incredibly bad at it (you and me). If you are really concerned about performance, write those tests. Then you will know.
 
 ## Conclusion
 
-Lua manages to strike a balance between flexibility, expressiveness and speed. It isn't particularly concerned with "user protection". Your modules should strive to do the same.
+Lua manages to strike a balance between flexibility, expressiveness and speed. It is not particularly concerned about protecting the end user from
+mistakes or misunderstandings.
 
-On this article, we've learned how to do so by embracing monkeypatching. We've also talked about locals: how they limit extensibility, and their relationship with speed.
+On this article, we've talked about locals: how they limit extensibility, and their relationship with speed.
 
 If you have questions or comments, please write them below.
