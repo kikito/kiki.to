@@ -35,12 +35,12 @@ The final section of the talk, "Conclusion", was basically about "what is left t
 is one (Automatic Type Conversion is the real culprint though). I explained that, due to the aforementioned *Browser Curse*, javascript **needs** to keep its bad parts intact.
 It can "add new stuff" (like the `===` operator), but it can't "fix" bad parts (because that would potentially break the websites made 5 or 10 years ago).
 
-Similarly, javascript can't even *deprecate* outdated features. `let` is objectively better than `var` in all ways, but again, removing `var` would brake old websites. So javascript
+Similarly, javascript can't even *deprecate* outdated features. `let` is objectively better than `var` in all ways, but again, removing `var` would break old websites. So javascript
 needs to "drag it along".
 
 > In javascript you can't deprecate bad or outdated parts
 
-This taxes javascript significantly. I compared the two most popular implementations of both languages (V8 and LuaJIT), and the javascript one was **10 times bigger**, that the Lua one.
+This taxes javascript significantly. I compared the two most popular implementations of both languages (V8 and LuaJIT), and the javascript one was **10 times bigger** than the Lua one.
 Not only that: it is also slower in most tests cases. Even if V8 is maintained by a team of engineers managed by Google and LuaJIT is basically maintained by a single (very gifted) individual.
 
 The differences in size, speed, maintainability and ... "cruft" can all be attributed to the *Browser Curse*, in my opinion. I draw a strong parallelism with C++.
