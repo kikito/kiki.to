@@ -20,7 +20,7 @@ cover to cover.
 
 <iframe src="https://kikito.github.io/ood-with-ruby/"></iframe>
 
-[Direct Link](https://kikito.github.io/ood-with-ruby/)
+[Direct link to slides](https://kikito.github.io/ood-with-ruby/)
 
 
 I gave this talk twice in a short period of time:
@@ -31,5 +31,11 @@ I gave this talk twice in a short period of time:
 This is the first time I repeat a talk, and I understand now why people do it. The second time was just better.
 
 The talks where in Spanish, and both were taped. I will put them here when they are available.
+
+EDIT: Here's the video (warning: Spanish)
+
+<iframe src="https://player.vimeo.com/video/133394117" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+[Direct link to video](https://vimeo.com/133394117)
 
 
