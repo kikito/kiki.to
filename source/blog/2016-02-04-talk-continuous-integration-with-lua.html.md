@@ -208,7 +208,7 @@ after_success:
 Notice that I add a `-e` parameter to `luacov-coveralls`. This makes it ignore anything happening inside the `lua_install` folder. If I didn't do
 this, the coverage information would include `busted`'s source code, too. This is only necessary because I am using hererocks to set up the environment.
 
-The only missing part is generating the `luacov` file. It turns out that busted already has a command-line option for it, called `--continue`.
+The only missing part is generating the `luacov` file. It turns out that busted already has a command-line option for it, called `--coverage`.
 Add it to busted, push the changes to travis, and it will start sending information:
 
 ``` yaml
