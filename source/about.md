@@ -14,7 +14,7 @@ I've been programming in [Ruby](https://www.ruby-lang.org) since 2010. I manage 
 
 ## Lua
 
-Recently I have been working on [Lua](http://www.lua.org) with [nginx](http://nginx.org), using the [OpenResty](http://openresty.org) distribution for [3Scale](http://3scale.net).
+Recently I have been working on [Lua](http://www.lua.org) with [nginx](http://nginx.org), using the [OpenResty](http://openresty.org) distribution for [Kong](https://github.com/Mashape/kong).
 
 ## More
 
